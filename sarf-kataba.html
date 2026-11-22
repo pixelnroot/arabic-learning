@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arabic Ṣarf from One Root · আরবি সরফ · عِلْمُ الصَّرْف</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F1; --surface:#FFFFFF; --surface2:#E8ECE6; --ink:#17202A; --muted:#56616C; --line:#CFD6CC; --bnink:#2F4A5C;
+  --g:#2463A6; --g-t:#E3EDF8; --m:#7446B0; --m-t:#EFE7F8; --f:#2B8550; --f-t:#E2F3E8;
+  --past:#C0352B; --past-t:#FBE6E3; --pres:#11878A; --pres-t:#DDF2F2; --fut:#D27A1E; --fut-t:#FCEEDC;
+  --amr:#3D6B8A; --amr-t:#E2ECF3; --nahy:#8A4A39; --nahy-t:#F4E6E1; --pass:#5F5A86; --pass-t:#E9E8F2; --der:#6F6B1F; --der-t:#EFEFD9;
+  --emph:#A3366F; --emph-t:#F7E4EE; --weak:#7A5A1E; --weak-t:#F3EBDA;
+  --add:#C2185B; --pt-bg:#EAE3D2; --pt-ink:#4A3A12; --sel:#FFE9A8; --sel-line:#D9A400;
+  --ar:'Amiri','Noto Naskh Arabic','Scheherazade New','Traditional Arabic','FreeSerif',serif;
+  --en:'Instrument Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+  --bnf:'Hind Siliguri','Noto Sans Bengali','Kalpurush','SolaimanLipi','FreeSans',sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#141A1F; --surface:#1C242B; --surface2:#26303A; --ink:#E8ECEF; --muted:#A3AEB8; --line:#36424D; --bnink:#BFD3E0;
+    --g:#79AEE8; --g-t:#1E3147; --m:#B996EA; --m-t:#33264A; --f:#6CCB92; --f-t:#1C3A29;
+    --past:#F08378; --past-t:#46221F; --pres:#5CC9CB; --pres-t:#173B3C; --fut:#F2AA5E; --fut-t:#47321A;
+    --amr:#8DB7D4; --amr-t:#22323F; --nahy:#D99A88; --nahy-t:#3F2A24; --pass:#AEA8DA; --pass-t:#2E2C45; --der:#CFCB73; --der-t:#36351C;
+    --emph:#EE8FC0; --emph-t:#43243A; --weak:#E0BE7C; --weak-t:#3B3120;
+    --add:#FF6FA6; --pt-bg:#3D3524; --pt-ink:#F1E3BC; --sel:#4D3F10; --sel-line:#E6BC3A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+    --bg:#141A1F; --surface:#1C242B; --surface2:#26303A; --ink:#E8ECEF; --muted:#A3AEB8; --line:#36424D; --bnink:#BFD3E0;
+    --g:#79AEE8; --g-t:#1E3147; --m:#B996EA; --m-t:#33264A; --f:#6CCB92; --f-t:#1C3A29;
+    --past:#F08378; --past-t:#46221F; --pres:#5CC9CB; --pres-t:#173B3C; --fut:#F2AA5E; --fut-t:#47321A;
+    --amr:#8DB7D4; --amr-t:#22323F; --nahy:#D99A88; --nahy-t:#3F2A24; --pass:#AEA8DA; --pass-t:#2E2C45; --der:#CFCB73; --der-t:#36351C;
+    --emph:#EE8FC0; --emph-t:#43243A; --weak:#E0BE7C; --weak-t:#3B3120;
+    --add:#FF6FA6; --pt-bg:#3D3524; --pt-ink:#F1E3BC; --sel:#4D3F10; --sel-line:#E6BC3A;
+    color-scheme:dark;
+}
+*{box-sizing:border-box}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--en);font-size:16px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
+.ar{font-family:var(--ar);direction:rtl;unicode-bidi:isolate}
+.ai{font-size:1.25em;line-height:1}
+.ar.inl{font-size:1.2em;line-height:1}
+.bn{font-family:var(--bnf);color:var(--bnink);font-size:1.03em}
+.blk{display:block}
+body.lang-en .bn,body.lang-ar .bn{display:none!important}
+body.lang-bn .en,body.lang-ar .en{display:none!important}
+body.lang-bn .bn{color:inherit}
+body.lang-both .en+.bn:not(.blk)::before{content:" / ";color:var(--muted)}
+body.lang-both .bn.blk{margin-top:2px}
+body.selftest .en,body.selftest .bn{filter:blur(5px);cursor:pointer;user-select:none}
+body.selftest .en.show,body.selftest .bn.show{filter:none}
+h1,h2,h3,h4{line-height:1.25;margin:0}
+p{margin:.4em 0}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--sel-line);outline-offset:2px;border-radius:4px}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--surface);border-bottom:1px solid var(--line)}
+.top-in{max-width:1360px;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.brand{display:flex;align-items:baseline;gap:10px;margin-right:auto}
+.brand b{font-size:15px}
+.brand .ar{font-size:22px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:transparent;padding:5px 10px;font-size:13.5px}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"],.tbtn[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+.seg .bnl{font-family:var(--bnf)}
+.tbtn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:5px 11px;font-size:13.5px;font-weight:600}
+.tbtn.primary{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.selbar{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.chapnav{border-top:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}
+.chapnav ol{list-style:none;margin:0 auto;padding:5px 20px;display:flex;gap:4px;max-width:1360px;white-space:nowrap}
+.chapnav a{display:block;text-decoration:none;color:var(--muted);font-size:13px;padding:3px 9px;border-radius:14px}
+.chapnav a:hover{background:var(--surface2);color:var(--ink)}
+.chapnav a b{color:var(--ink);font-weight:700;margin-right:4px}
+.chapnav a.cur{background:var(--ink);color:var(--surface)}
+.chapnav a.cur b,.chapnav a.cur .bn{color:var(--surface)}
+
+main{max-width:1360px;margin:0 auto;padding:0 20px 90px}
+
+.hero{display:grid;grid-template-columns:minmax(280px,380px) 1fr;gap:28px;padding:30px 0 14px;align-items:start}
+.hero>*{min-width:0}
+.hero h1{font-size:clamp(28px,3.3vw,40px);font-weight:700;letter-spacing:-.01em}
+.hero h1 .bn{font-size:.8em}
+.hero .lede{color:var(--muted);margin-top:10px}
+.rootword{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:16px;margin-top:20px}
+.rl{text-align:center}
+.rl>.ar{font-size:72px;line-height:1.1;display:block;font-weight:700}
+.rl small{display:block;font-size:12.5px;color:var(--muted);line-height:1.35}
+.rl small .ar{font-size:17px}
+.question4{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:14px}
+.question4 div{border-left:3px solid var(--line);padding-left:8px}
+.question4 b{display:block}
+
+.mapwrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px;overflow-x:auto}
+.map{display:block;width:100%;min-width:780px;height:auto}
+.map .node{cursor:pointer}
+.map .node rect.box{fill:var(--surface);stroke-width:2}
+.map .node:hover rect.box,.map .node:focus rect.box{fill:var(--surface2)}
+.map text.a{font-family:var(--ar);font-size:26px;fill:var(--ink)}
+.map text.en{font-family:var(--en);font-size:13px;fill:var(--muted)}
+.map text.bn{font-family:var(--bnf);font-size:13.5px;fill:var(--muted)}
+body.lang-bn .map text.bn{transform:translateY(-19px)}
+.map .edge{fill:none;stroke-width:2.2}
+.map .edge.dash{stroke-dasharray:6 6}
+
+.tracer{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.tracer h3{font-size:15px;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px 14px}
+.chipgrp{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.chipgrp>span{font-size:12px;color:var(--muted);margin-right:2px}
+.chip{border:1.5px solid var(--c);background:var(--surface);border-radius:20px;padding:1px 10px 3px;font-family:var(--ar);font-size:19px;line-height:1.5}
+.chip[aria-pressed="true"]{background:var(--c);color:var(--surface)}
+.chain{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin-top:12px}
+.step{border-radius:10px;padding:5px 11px 7px;background:var(--t);border:1px solid color-mix(in srgb,var(--c) 35%,transparent);min-width:108px}
+.step .lab{font-size:11.5px;color:var(--c);font-weight:700}
+.step>.ar{font-size:28px;display:block;line-height:1.4}
+.step .en,.step .bn{font-size:12.5px;display:block}
+.step .bn::before{content:none!important}
+.arrow{align-self:center;color:var(--muted);font-size:19px}
+
+section.lvl{margin-top:38px;scroll-margin-top:130px;transition:opacity .25s}
+.lvlhead{display:flex;gap:14px;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:16px;flex-wrap:wrap}
+.lvlno{font-size:13px;font-weight:700;background:var(--ink);color:var(--surface);border-radius:6px;padding:2px 9px;align-self:center}
+.lvlhead h2{font-size:clamp(22px,2.4vw,28px)}
+.lvlhead h2 .bn{display:block;font-size:.74em;font-weight:600}
+.lvlhead h2 .bn::before{content:none!important}
+body.lang-bn .lvlhead h2 .bn{font-size:1em}
+.lvlhead>.ar{font-size:26px;color:var(--muted)}
+.lvlhead p{flex:0 0 100%;margin:0;color:var(--muted);padding-right:max(0px,calc(100% - 84ch))}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:15px 17px}
+.panel h3{font-size:17.5px;margin-bottom:6px}
+.panel h3 .ar{font-size:23px;font-weight:700;margin-left:6px}
+.panel.c{border-top:5px solid var(--c)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid2>*,.grid3>*,.trio>*,.why>*,.pgroups>*{min-width:0}
+.mt{margin-top:16px}
+.note{font-size:14px;color:var(--muted)}
+.note .bn{color:var(--muted)}
+.warn{border-left:5px solid var(--past);background:var(--past-t);padding:10px 14px;border-radius:8px;font-size:14.5px;margin-top:14px}
+.tip{border-left:5px solid var(--sel-line);background:color-mix(in srgb,var(--sel) 55%,var(--surface));padding:10px 14px;border-radius:8px;font-size:14.5px;margin-top:14px}
+.big{font-size:34px;line-height:1.45}
+
+.form{border-radius:5px;padding:0 3px;cursor:help;white-space:nowrap}
+.form:hover,.form:focus{background:var(--surface2)}
+.ad{color:var(--add)}
+.rt{color:var(--ink)}
+.pt{color:var(--pt-ink);background:var(--pt-bg);border-radius:4px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;margin:12px 0 4px;align-items:center}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.trio .ar.big{display:block;text-align:center;margin:4px 0}
+.family{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.family span.w{background:var(--surface2);border-radius:8px;padding:2px 10px 4px;font-size:13.5px}
+.family .ar{font-size:21px;margin-right:6px}
+.kinds{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kinds div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-align:center}
+.kinds .ar{font-size:30px;display:block}
+.pairs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pair{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--surface)}
+.pair .ar.t{font-size:20px;font-weight:700;display:block}
+.pair .ex{font-size:24px;display:block;margin-top:2px}
+
+.pgroups{display:grid;grid-template-columns:1fr 1fr .62fr;gap:14px}
+.pg{border:2px solid var(--c);border-radius:12px;padding:12px;background:var(--surface)}
+.pg h3{font-size:16px;color:var(--c)}
+.pg h3 .ar{font-size:24px;margin-left:6px}
+.pgt{display:grid;grid-template-columns:62px repeat(3,1fr);gap:6px;margin-top:8px}
+.pgt.first{grid-template-columns:1fr 1fr}
+.pgt .hd{font-size:12px;color:var(--muted);text-align:center;align-self:end}
+.pgt .hd .ar{font-size:16px;display:block}
+.pgt .rh{font-size:12px;color:var(--muted);align-self:center}
+.pgt .rh .ar{font-size:16px;display:block}
+.pcell{border:1px solid var(--line);border-radius:9px;background:var(--t);padding:16px 5px 6px;text-align:center;cursor:pointer;position:relative}
+.pcell .no{position:absolute;top:3px;left:6px;font-size:11px;color:var(--c);font-weight:700}
+.pcell .att{position:absolute;top:1px;right:7px;font-size:14px;line-height:1.2;color:var(--muted)}
+.pcell>.ar{font-size:25px;display:block;line-height:1.4}
+.pcell .en,.pcell .bn{font-size:12px;line-height:1.25;display:block}
+.pcell .bn::before{content:none!important}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.formula{font-size:15px}
+.formula b{font-size:19px}
+
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%}
+th,td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+thead th{font-size:12.5px;color:var(--muted);font-weight:600;background:var(--surface2)}
+thead th .ar{font-size:17px;display:block;color:var(--ink)}
+thead th .bn::before{content:none!important}
+thead th .bn{display:block}
+td .ar{font-size:23px}
+td.f .ar{font-size:26px}
+td.nm .ar{font-size:17px}
+td.nm .bn{font-size:12px;display:block}
+td.pr .ar{font-size:21px}
+td .bn::before{content:none!important}
+td .bn{display:block}
+tr.grp td{background:var(--t);font-size:13px;font-weight:700;color:var(--c);padding:4px 10px}
+tr.grp td .ar{font-size:18px}
+tbody tr[data-slot]{cursor:pointer}
+tbody tr[data-slot] td:first-child{border-left:5px solid var(--c)}
+.num{font-size:12px;color:var(--muted);width:28px;text-align:center}
+.on,tr.on td{background:var(--sel)!important}
+.pcell.on{outline:3px solid var(--sel-line);background:var(--sel)}
+th.past{color:var(--past)} th.pres{color:var(--pres)} th.fut{color:var(--fut)}
+th.amr{color:var(--amr)} th.nahy{color:var(--nahy)} th.pass{color:var(--pass)} th.emph{color:var(--emph)} th.weak{color:var(--weak)}
+td.en,td.mn{font-size:13.5px}
+.signs{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.signs span{border-radius:8px;background:var(--t);padding:0 8px 2px;font-size:13px;display:inline-flex;align-items:baseline;gap:5px}
+.signs .ar{font-size:22px;color:var(--add)}
+
+.mcons{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.mc{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface);cursor:pointer;text-align:left}
+.mc[aria-pressed="true"]{outline:3px solid var(--past);outline-offset:-1px}
+.mc .hdr{display:flex;justify-content:space-between;align-items:baseline;gap:6px;flex-wrap:wrap}
+.mc .hdr .ar{font-size:19px;font-weight:700;color:var(--past)}
+.mc .hdr small{font-size:12px;color:var(--muted)}
+.mc .ex{font-size:30px;display:block;text-align:center;margin:2px 0}
+.mc .tr{font-size:14px;font-weight:600;text-align:center}
+.mc p{font-size:13.5px;color:var(--muted)}
+.tl{display:block;width:100%;height:44px}
+.tl line,.tl path{stroke:var(--muted)}
+.tl .now{fill:var(--ink);font:11px var(--en)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.cards>div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-align:center;background:var(--surface)}
+.cards .ar.x{font-size:28px;display:block}
+.cards small{font-size:12.5px;color:var(--muted);display:block}
+.cards .ar.lbl{font-size:16px;color:var(--muted);display:block}
+.prefixes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.pfx{border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.pfx .ar.L{font-size:40px;color:var(--add);line-height:1.2}
+.pfx .who{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.pfx .who span{font-size:17px;border-radius:12px;padding:0 8px;background:var(--t);color:var(--c);font-family:var(--ar)}
+.steps{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}
+.steps .st{border:1px dashed var(--line);border-radius:10px;padding:4px 12px 6px;text-align:center}
+.steps .st>.ar{font-size:30px;display:block}
+.steps .st small{font-size:12px;color:var(--muted)}
+.axes{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:10px}
+.axes div{border-top:4px solid var(--c);background:var(--surface);border-radius:8px;padding:8px 10px;font-size:13.5px}
+.axes b{display:block;font-size:14.5px}
+.axes .ar{font-size:19px}
+.dnoun{text-align:center}
+.dnoun .ar.big{display:block}
+details{margin-top:12px}
+summary{cursor:pointer;font-weight:600}
+.picker{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.picker button{border:1.5px solid var(--line);background:var(--surface);border-radius:20px;padding:2px 12px 4px;font-size:14px}
+.picker button .ar{font-size:19px}
+.picker button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--surface)}
+
+.ncards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.nc{border:1px solid var(--line);border-top:5px solid var(--der);border-radius:12px;padding:10px 12px;background:var(--surface)}
+.nc h4{font-size:15px}
+.nc h4 .ar{font-size:20px;margin-left:6px}
+.nc .pat{font-size:15px;color:var(--muted)}
+.nc .pat .ar{font-size:21px;color:var(--add)}
+.nc .ex{font-size:30px;display:block;text-align:center;margin:4px 0}
+.nc p{font-size:13.5px}
+
+.recite{counter-reset:r}
+.rline{display:grid;grid-template-columns:34px minmax(0,1.25fr) minmax(0,1fr);gap:4px 16px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.rline::before{counter-increment:r;content:counter(r);font-size:12px;color:var(--muted);font-weight:700}
+.rline>.ar{font-size:27px;line-height:1.6;text-align:right}
+.rline .tx .bn::before{content:none!important}
+.rline .tx .bn{display:block}
+
+.abwab{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.bab{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface);position:relative}
+.bab.home{border:3px solid var(--past);box-shadow:0 0 0 4px var(--past-t)}
+.bab .bn2{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.bab .bn2 .ar{font-size:24px;font-weight:700}
+.bab .bn2 small{color:var(--muted);font-size:12.5px;text-align:right}
+.bab .pat{display:flex;justify-content:center;gap:18px;margin:4px 0}
+.bab .pat .ar{font-size:30px}
+.bab .more{display:flex;justify-content:center;gap:16px;font-size:13px;color:var(--muted)}
+.bab .more .ar{font-size:20px;color:var(--ink)}
+.ayn{color:var(--add);font-weight:700}
+.vow{display:flex;justify-content:center;gap:8px;align-items:center;font-size:13.5px;margin-top:4px}
+.vow span{border-radius:12px;padding:1px 9px;background:var(--surface2);font-weight:600}
+.badge{position:absolute;top:-11px;right:12px;background:var(--past);color:#fff;font-size:12px;font-weight:700;border-radius:10px;padding:1px 9px}
+
+.mz td .ar{font-size:21px}
+.mz td.fm{font-weight:700;font-size:15px;white-space:nowrap}
+.mz tr.hl td{background:var(--pres-t)}
+.aq td .ar{font-size:21px}
+
+.gl-search{width:100%;max-width:420px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit;margin-bottom:10px}
+
+.quiz{max-width:780px}
+.qq{font-size:17px;margin:6px 0 10px}
+.qq .ar{font-size:32px}
+.qq .bn{display:block}
+.qq .bn::before{content:none!important}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opts button{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;min-height:54px}
+.opts button .ar{font-size:23px}
+.opts button.right{border-color:var(--f);background:var(--f-t)}
+.opts button.wrong{border-color:var(--past);background:var(--past-t)}
+.qfoot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:10px;flex-wrap:wrap}
+.fb{font-size:14.5px;margin-top:10px;min-height:1.5em}
+.fb .bn{display:block}
+.fb .bn::before{content:none!important}
+
+#tip{position:fixed;z-index:80;max-width:360px;background:var(--ink);color:var(--surface);border-radius:10px;padding:10px 12px;font-size:13.5px;line-height:1.45;pointer-events:none;opacity:0;transition:opacity .12s}
+#tip.v{opacity:1}
+#tip .ar{font-size:26px;display:block;text-align:right}
+#tip .k{display:inline-block;min-width:58px;opacity:.7}
+#tip .bn{color:var(--surface);opacity:.9}
+
+body.learning section.lvl:not(.focus),body.learning .heroblock:not(.focus){opacity:.36}
+#coach{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:70;width:min(660px,calc(100% - 24px));background:var(--surface);border:2px solid var(--ink);border-radius:14px;padding:12px 16px;box-shadow:0 10px 30px rgba(0,0,0,.25);display:none}
+body.learning #coach{display:block}
+#coach .cs{font-size:12.5px;color:var(--muted)}
+#coach h4{font-size:17px;margin:2px 0 4px}
+#coach h4 .bn{display:block;font-size:15px}
+#coach h4 .bn::before{content:none!important}
+#coach p{font-size:14.5px}
+#coach .cb{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+
+footer{margin-top:40px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+footer p{max-width:100ch}
+
+@media (max-width:1000px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .pgroups{grid-template-columns:minmax(0,1fr)}
+  .grid2,.trio,.why{grid-template-columns:minmax(0,1fr)}
+  .mcons,.abwab,.ncards,.pairs,.kinds{grid-template-columns:1fr 1fr}
+  .axes{grid-template-columns:1fr 1fr}
+  .rline{grid-template-columns:28px minmax(0,1fr)}
+  .rline .tx{grid-column:2}
+}
+@media (max-width:620px){
+  main{padding:0 12px 130px}
+  .top-in{padding:8px 12px}
+  .mcons,.abwab,.axes,.ncards,.pairs,.cards{grid-template-columns:1fr}
+  .kinds{grid-template-columns:1fr}
+  .opts{grid-template-columns:1fr}
+  .rl>.ar{font-size:56px}
+  .brand .ar{display:none}
+  .grid2 .grid2{grid-template-columns:minmax(0,1fr)}
+  .top{position:static}
+  html{scroll-padding-top:12px}
+  section.lvl{scroll-margin-top:12px}
+  .selbar{display:none}
+}
+
+#ppbar{display:none;position:sticky;top:env(safe-area-inset-top,0px);z-index:55;background:var(--ink);color:var(--surface);padding:8px 20px;font-size:14px;justify-content:space-between;align-items:center;gap:10px}
+body.pp #ppbar{display:flex}
+#ppbar button{background:var(--surface);color:var(--ink);border:0;border-radius:6px;padding:4px 10px;font-weight:600}
+body.pp .no-print,body.pp #coach{display:none!important}
+@page{size:A3 landscape;margin:9mm}
+@media print{
+  :root{--bg:#fff;--surface:#fff;--surface2:#F0F2EF;--ink:#000;--muted:#444;--line:#BBB;--bnink:#1d3445;color-scheme:light;padding:0}
+  html,body{background:#fff;font-size:11.5px}
+  body::before,.top,#coach,#tip,#ppbar,.no-print{display:none!important}
+  body.selftest .en,body.selftest .bn{filter:none}
+  main{max-width:none;padding:0;display:block;columns:2;column-gap:9mm;column-fill:auto}
+  .heroblock{column-span:all;break-after:page}
+  section.lvl{margin-top:0;padding-top:4mm;break-inside:auto;opacity:1!important}
+  .lvlhead,h3{break-after:avoid}
+  .tw,.panel,.pg,.mc,.bab,.nc,.cards>div,.pair,.step{break-inside:avoid}
+  .pgroups,.mcons,.abwab,.ncards,.why,.trio,.grid2,.grid3,.pairs,.kinds,.cards,.axes{grid-template-columns:1fr 1fr!important}
+  .pgroups>.pg:last-child{grid-column:1/-1}
+  .lvlhead p{padding-right:0}
+  .panel,.pg,.mc,.bab,.mapwrap,.tracer,tr,.nc,.rline{break-inside:avoid}
+  .hero{grid-template-columns:300px 1fr;padding-top:0}
+  .lvlhead{margin-bottom:8px;padding-bottom:4px}
+  .lvlhead h2{font-size:19px}
+  .pgroups{grid-template-columns:1fr 1fr .62fr}
+  .grid2{grid-template-columns:1fr 1fr}
+  .trio,.why,.pairs,.kinds,.ncards{grid-template-columns:repeat(3,1fr)}
+  .mcons,.abwab{grid-template-columns:repeat(3,1fr);gap:8px}
+  .axes{grid-template-columns:repeat(5,1fr)}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .panel{padding:9px 11px}
+  th,td{padding:3px 6px}
+  td .ar{font-size:17px} td.f .ar{font-size:19px} td.nm .ar{font-size:14px} td.pr .ar{font-size:16px}
+  td.en,td.mn{font-size:10.5px}
+  .mc .ex,.bab .pat .ar,.nc .ex{font-size:23px}
+  .big{font-size:25px}
+  .pcell>.ar{font-size:19px}
+  .rline>.ar{font-size:20px}
+  .tw{overflow:visible}
+  .map{min-width:0}
+  .gl-search{display:none}
+  .on,tr.on td,.pcell.on{background:transparent!important;outline:0}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none!important}
+}
+</style>
+</head>
+<body class="lang-both">
+<div id="ppbar"><span><span class="en">Print layout: every table and translation is shown. Use your browser’s Print command (A3 landscape).</span><span class="bn">প্রিন্ট বিন্যাস: সব ছক ও অনুবাদ দেখানো হচ্ছে। ব্রাউজারের Print ব্যবহার করুন (A3 আড়াআড়ি)।</span></span><button id="ppExit">Close</button></div>
+<header class="top no-print">
+  <div class="top-in">
+    <div class="brand"><b>Ṣarf from one root</b><span class="ar">عِلْمُ الصَّرْفِ</span></div>
+    <div class="seg" role="group" aria-label="Language">
+      <button data-lang="lang-en" aria-pressed="false">English</button>
+      <button data-lang="lang-bn" aria-pressed="false" class="bnl">বাংলা</button>
+      <button data-lang="lang-both" aria-pressed="true">EN + <span class="bnl">বাংলা</span></button>
+      <button data-lang="lang-ar" aria-pressed="false">Arabic only</button>
+    </div>
+    <button class="tbtn" id="testBtn" aria-pressed="false">Self-test</button>
+    <button class="tbtn primary" id="learnBtn">Learn step by step</button>
+    <button class="tbtn" id="printBtn">Print layout</button>
+    <div class="selbar"><span>Selected</span><span id="selLabel" class="ar chip" style="--c:var(--g)">هُوَ</span></div>
+  </div>
+  <nav class="chapnav" aria-label="Chapters"><ol id="chapnav"></ol></nav>
+</header>
+<main id="main"></main>
+<div id="tip" role="tooltip"></div>
+<div id="coach" class="no-print" role="dialog" aria-label="Step-by-step guide">
+  <div class="cs" id="cStep"></div><h4 id="cTitle"></h4><p id="cText"></p>
+  <div class="cb"><button class="tbtn" id="cExit">Exit guide</button><button class="tbtn" id="cPrev">Back</button><button class="tbtn primary" id="cNext">Next</button></div>
+</div>
+<script>
+(function(){
+"use strict";
+/* ================= helpers ================= */
+const ZWJ='\u200D';
+const L=(e,b)=>`<span class="en">${e}</span><span class="bn">${b}</span>`;
+const LB=(e,b)=>`<span class="en blk">${e}</span><span class="bn blk">${b}</span>`;
+const A=t=>`<span class="ar ai">${t}</span>`;
+const $=q=>document.querySelector(q);
+const GRP={g:{c:'var(--g)',t:'var(--g-t)',ar:'غَائِب',en:'Third person',bn:'নাম পুরুষ (গায়েব)',sen:'someone else',sbn:'অন্য কেউ'},
+           m:{c:'var(--m)',t:'var(--m-t)',ar:'مُخَاطَب',en:'Second person',bn:'মধ্যম পুরুষ (মুখাতাব)',sen:'the listener',sbn:'শ্রোতা'},
+           f:{c:'var(--f)',t:'var(--f-t)',ar:'مُتَكَلِّم',en:'First person',bn:'উত্তম পুরুষ (মুতাকাল্লিম)',sen:'the speaker',sbn:'বক্তা'}};
+
+/* ================= the 14 ṣīghahs ================= */
+const S=[
+ {n:1,g:'g',name:'وَاحِد مُذَكَّر غَائِب',bnName:'ওয়াহিদ মুযাক্কার গায়েব',pr:'هُوَ',att:'هُ',who:'He',ep:'one man',obj:'him',bnS:'সে',bnP:'সে (পুরুষ)',gen:'m',num:'s'},
+ {n:2,g:'g',name:'تَثْنِيَة مُذَكَّر غَائِب',bnName:'তাসনিয়া মুযাক্কার গায়েব',pr:'هُمَا',att:'هُمَا',who:'They two (m.)',obj:'the two of them',bnS:'তারা দুজন',bnP:'তারা দুজন (পুরুষ)',gen:'m',num:'d'},
+ {n:3,g:'g',name:'جَمْع مُذَكَّر غَائِب',bnName:'জমা মুযাক্কার গায়েব',pr:'هُمْ',att:'هُمْ',who:'They (m.)',obj:'them',bnS:'তারা',bnP:'তারা সবাই (পুরুষ)',gen:'m',num:'p'},
+ {n:4,g:'g',name:'وَاحِدَة مُؤَنَّث غَائِب',bnName:'ওয়াহিদা মুয়ান্নাস গায়েব',pr:'هِيَ',att:'هَا',who:'She',obj:'her',bnS:'সে',bnP:'সে (নারী)',gen:'f',num:'s'},
+ {n:5,g:'g',name:'تَثْنِيَة مُؤَنَّث غَائِب',bnName:'তাসনিয়া মুয়ান্নাস গায়েব',pr:'هُمَا',att:'هُمَا',who:'They two (f.)',obj:'the two of them',bnS:'তারা দুজন',bnP:'তারা দুজন (নারী)',gen:'f',num:'d'},
+ {n:6,g:'g',name:'جَمْع مُؤَنَّث غَائِب',bnName:'জমা মুয়ান্নাস গায়েব',pr:'هُنَّ',att:'هُنَّ',who:'They (f.)',obj:'them',bnS:'তারা',bnP:'তারা সবাই (নারী)',gen:'f',num:'p'},
+ {n:7,g:'m',name:'وَاحِد مُذَكَّر مُخَاطَب',bnName:'ওয়াহিদ মুযাক্কার মুখাতাব',pr:'أَنْتَ',att:'كَ',who:'You (m. sg.)',ep:'one man',bnTo:'একজন পুরুষকে',bnS:'তুমি',bnP:'তুমি (পুরুষ)',gen:'m',num:'s'},
+ {n:8,g:'m',name:'تَثْنِيَة مُذَكَّر مُخَاطَب',bnName:'তাসনিয়া মুযাক্কার মুখাতাব',pr:'أَنْتُمَا',att:'كُمَا',who:'You two (m.)',ep:'two men',bnTo:'দুজন পুরুষকে',bnS:'তোমরা দুজন',bnP:'তোমরা দুজন (পুরুষ)',gen:'m',num:'d'},
+ {n:9,g:'m',name:'جَمْع مُذَكَّر مُخَاطَب',bnName:'জমা মুযাক্কার মুখাতাব',pr:'أَنْتُمْ',att:'كُمْ',who:'You all (m.)',ep:'men',bnTo:'পুরুষদের',bnS:'তোমরা',bnP:'তোমরা সবাই (পুরুষ)',gen:'m',num:'p'},
+ {n:10,g:'m',name:'وَاحِدَة مُؤَنَّث مُخَاطَب',bnName:'ওয়াহিদা মুয়ান্নাস মুখাতাব',pr:'أَنْتِ',att:'كِ',who:'You (f. sg.)',ep:'one woman',bnTo:'একজন নারীকে',bnS:'তুমি',bnP:'তুমি (নারী)',gen:'f',num:'s'},
+ {n:11,g:'m',name:'تَثْنِيَة مُؤَنَّث مُخَاطَب',bnName:'তাসনিয়া মুয়ান্নাস মুখাতাব',pr:'أَنْتُمَا',att:'كُمَا',who:'You two (f.)',ep:'two women',bnTo:'দুজন নারীকে',bnS:'তোমরা দুজন',bnP:'তোমরা দুজন (নারী)',gen:'f',num:'d'},
+ {n:12,g:'m',name:'جَمْع مُؤَنَّث مُخَاطَب',bnName:'জমা মুয়ান্নাস মুখাতাব',pr:'أَنْتُنَّ',att:'كُنَّ',who:'You all (f.)',ep:'women',bnTo:'নারীদের',bnS:'তোমরা',bnP:'তোমরা সবাই (নারী)',gen:'f',num:'p'},
+ {n:13,g:'f',name:'وَاحِد مُتَكَلِّم',bnName:'ওয়াহিদ মুতাকাল্লিম',pr:'أَنَا',att:'نِي',who:'I',obj:'me',bnS:'আমি',bnP:'আমি (নারী-পুরুষ)',num:'s'},
+ {n:14,g:'f',name:'جَمْع مُتَكَلِّم',bnName:'জমা মুতাকাল্লিম',pr:'نَحْنُ',att:'نَا',who:'We',obj:'us',bnS:'আমরা',bnP:'আমরা (দুই বা বেশি)',num:'p'}
+];
+// [prefix, stem, suffix]
+const MD=[['','كَتَبَ',''],['','كَتَبَ','ا'],['','كَتَبُ','وا'],['','كَتَبَ','تْ'],['','كَتَبَ','تَا'],['','كَتَبْ','نَ'],['','كَتَبْ','تَ'],['','كَتَبْ','تُمَا'],['','كَتَبْ','تُمْ'],['','كَتَبْ','تِ'],['','كَتَبْ','تُمَا'],['','كَتَبْ','تُنَّ'],['','كَتَبْ','تُ'],['','كَتَبْ','نَا']];
+const MU=[['يَ','كْتُبُ',''],['يَ','كْتُبَ','انِ'],['يَ','كْتُبُ','ونَ'],['تَ','كْتُبُ',''],['تَ','كْتُبَ','انِ'],['يَ','كْتُبْ','نَ'],['تَ','كْتُبُ',''],['تَ','كْتُبَ','انِ'],['تَ','كْتُبُ','ونَ'],['تَ','كْتُبِ','ينَ'],['تَ','كْتُبَ','انِ'],['تَ','كْتُبْ','نَ'],['أَ','كْتُبُ',''],['نَ','كْتُبُ','']];
+S.forEach((o,i)=>{o.md=MD[i];o.mu=MU[i];});
+const KANA=['كَانَ','كَانَا','كَانُوا','كَانَتْ','كَانَتَا','كُنَّ','كُنْتَ','كُنْتُمَا','كُنْتُمْ','كُنْتِ','كُنْتُمَا','كُنْتُنَّ','كُنْتُ','كُنَّا'];
+const third=o=>o.n===1||o.n===4;
+const is2=o=>o.g==='m';
+
+/* ---------- morphology rules ---------- */
+function mood(f,t){let[p,s,x]=f;if(t==='u')return f.slice();
+  if(x==='')s=s.slice(0,-1)+(t==='nasb'?'\u064E':'\u0652');
+  else if(x==='انِ')x='ا';else if(x==='ونَ')x='وا';else if(x==='ينَ')x='ي';
+  return[p,s,x];}
+function heavy(f){let[p,s,x]=f;
+  if(x==='')return[p,s.slice(0,-1)+'\u064E','نَّ'];
+  if(x==='انِ')return[p,s,'انِّ'];
+  if(x==='ونَ'||x==='ينَ')return[p,s,'نَّ'];
+  return[p,s,'نَانِّ'];}
+function light(f){let[p,s,x]=f;
+  if(x==='')return[p,s.slice(0,-1)+'\u064E','نْ'];
+  if(x==='ونَ'||x==='ينَ')return[p,s,'نْ'];
+  return null;}
+const amrF=f=>{const j=mood(f,'jazm');return['اُ',j[1],j[2]];};
+const amrH=f=>{const h=heavy(f);return['اُ',h[1],h[2]];};
+const pasMd=f=>['',f[1].replace('كَتَب','كُتِب'),f[2]];
+const pasMu=f=>[f[0].replace('\u064E','\u064F'),f[1].replace('كْتُب','كْتَب'),f[2]];
+const plain=(f,o={})=>((o.pre||[]).map(w=>w+' ').join(''))+(o.att||'')+f.join('');
+
+/* ---------- Bangla verb forms ---------- */
+const BV={3:{past:'লিখল',pres:'লেখে',fut:'লিখবে',perf:'লিখেছে',plup:'লিখেছিল',prog:'লিখছিল',hab:'লিখত',negpres:'লেখে না',negfut:'লিখবে না',negpast:'লেখেনি'},
+          2:{past:'লিখলে',pres:'লেখো',fut:'লিখবে',perf:'লিখেছ',plup:'লিখেছিলে',prog:'লিখছিলে',hab:'লিখতে',negpres:'লেখো না',negfut:'লিখবে না',negpast:'লেখোনি'},
+          1:{past:'লিখলাম',pres:'লিখি',fut:'লিখব',perf:'লিখেছি',plup:'লিখেছিলাম',prog:'লিখছিলাম',hab:'লিখতাম',negpres:'লিখি না',negfut:'লিখব না',negpast:'লিখিনি'}};
+const bc=o=>o.g==='g'?3:o.g==='m'?2:1;
+const lw=o=>o.n===13?'I':o.who.charAt(0).toLowerCase()+o.who.slice(1);
+
+/* kinds of form → English and Bangla meaning */
+function meaning(k,n){const o=S[n-1],W=o.who,w=lw(o),v=BV[bc(o)],b=o.bnS,t=third(o);
+ const was=[1,4,13].includes(n)?'was':'were',has=t?'has':'have';
+ switch(k){
+  case'md':return[`${W} wrote`,`${b} ${v.past}`];
+  case'mu':return[`${W} ${t?'writes':'write'}`,`${b} ${v.pres}`];
+  case'fu':return[`${W} will write`,`${b} ${v.fut}`];
+  case'neg':return[`${W} ${t?'does':'do'} not write`,`${b} ${v.negpres}`];
+  case'nasb':return[`${W} will not write`,`${b} ${v.negfut}`];
+  case'jazm':return[`${W} did not write`,`${b} ${v.negpast}`];
+  case'lamma':return[`${W} ${has} not written yet`,`${b} এখনো ${v.negpast}`];
+  case'qarib':return[`${W} ${has} written`,`${b} ${v.perf}`];
+  case'baid':return[`${W} had written`,`${b} ${v.plup}`];
+  case'istim':return[`${W} ${was} writing / used to write`,`${b} ${v.prog} / ${v.hab}`];
+  case'ihtim':return[`Perhaps ${w} wrote`,`হয়তো ${b} ${v.perf}`];
+  case'taman':return[`If only ${w} had written!`,`আহা, যদি ${b} ${v.hab}!`];
+  case'tawk':return[`${W} will surely write`,`${b} অবশ্যই ${v.fut}`];
+  case'tawkL':return[`${W} will surely write (lighter)`,`${b} অবশ্যই ${v.fut} (হালকা তাকীদ)`];
+  case'amr':return[`Write! (to ${o.ep})`,`লেখো! (${o.bnTo})`];
+  case'nahy':return[`Do not write! (to ${o.ep})`,`লিখো না! (${o.bnTo})`];
+  case'amrH':return[`Do write! (to ${o.ep}, emphatic)`,`অবশ্যই লেখো! (${o.bnTo})`];
+  case'nahyH':return[`Never write! (to ${o.ep}, emphatic)`,`কিছুতেই লিখো না! (${o.bnTo})`];
+  case'lamr':return is2(o)?[`Write! (to ${o.ep})`,`লেখো! (${o.bnTo})`]:n===13?['Let me write','আমি যেন লিখি']:n===14?['Let us write','চলো, আমরা লিখি']:[`Let ${o.obj} write`,`${b} লিখুক`];
+  case'lnahy':return is2(o)?[`Do not write! (to ${o.ep})`,`লিখো না! (${o.bnTo})`]:n===13?['Let me not write','আমি যেন না লিখি']:n===14?['Let us not write','আমরা যেন না লিখি']:[`Let ${o.obj} not write`,`${b} যেন না লেখে`];
+  case'pmd':return t?[`${n===1?'He / it':'She / it'} was written`,'তা লেখা হলো']:[`${W} ${n===13?'was':'were'} written (passive)`,`${b}: কর্মবাচ্য অতীত`];
+  case'pmu':return t?[`${n===1?'He / it':'She / it'} is (being) written`,'তা লেখা হয় / হচ্ছে']:[`${W} ${n===13?'am':'are'} (being) written (passive)`,`${b}: কর্মবাচ্য বর্তমান`];
+ }}
+
+const KN={md:['Past','মাযী (অতীত)','الْمَاضِي'],mu:['Present / future','মুযারে’ (বর্তমান/ভবিষ্যৎ)','الْمُضَارِع'],fu:['Future','ভবিষ্যৎ','سَ + الْمُضَارِع'],
+ neg:['Present negative','বর্তমান নাবোধক','مُضَارِع مَنْفِي'],nasb:['Future negative (after لَنْ)','ভবিষ্যৎ নাবোধক (لَنْ-এর পরে)','نَفْيِ تَأْكِيد بِلَنْ'],jazm:['Past negative (after لَمْ)','অতীত নাবোধক (لَمْ-এর পরে)','نَفْيِ جَحْد بِلَمْ'],
+ lamma:['Not yet (after لَمَّا)','এখনো নয় (لَمَّا-এর পরে)','نَفْيِ جَحْد بِلَمَّا'],
+ qarib:['Near past','নিকট অতীত','مَاضِي قَرِيب'],baid:['Distant past','দূর অতীত','مَاضِي بَعِيد'],istim:['Continuous past','ঘটমান অতীত','مَاضِي اِسْتِمْرَارِي'],ihtim:['Possible past','সম্ভাব্য অতীত','مَاضِي اِحْتِمَالِي'],taman:['Wishful past','আকাঙ্ক্ষামূলক অতীত','مَاضِي تَمَنَّائِي'],
+ tawk:['Emphatic, heavy nūn','তাকীদ, ভারী নূন','نُونُ التَّأْكِيدِ الثَّقِيلَة'],tawkL:['Emphatic, light nūn','তাকীদ, হালকা নূন','نُونُ التَّأْكِيدِ الْخَفِيفَة'],
+ amr:['Command','আমর (আদেশ)','الْأَمْر'],nahy:['Prohibition','নাহী (নিষেধ)','النَّهْي'],amrH:['Emphatic command','তাকীদযুক্ত আমর','أَمْر بِنُونِ التَّأْكِيد'],nahyH:['Emphatic prohibition','তাকীদযুক্ত নাহী','نَهْي بِنُونِ التَّأْكِيد'],
+ lamr:['Command with لِـ','লাম-এ আমরসহ আদেশ','أَمْر بِاللَّام'],lnahy:['Prohibition (all persons)','নিষেধ (সব পুরুষ)','النَّهْي'],
+ pmd:['Past passive','মাযী মাজহূল (কর্মবাচ্য অতীত)','مَاضٍ مَجْهُول'],pmu:['Present passive','মুযারে’ মাজহূল (কর্মবাচ্য বর্তমান)','مُضَارِع مَجْهُول']};
+
+/* form builder for any kind */
+function build(k,n){const o=S[n-1],f=o.mu;
+ switch(k){
+  case'md':return[o.md,{}];case'mu':return[f,{}];case'fu':return[f,{att:'سَ'}];
+  case'neg':return[f,{pre:['لَا']}];case'nasb':return[mood(f,'nasb'),{pre:['لَنْ']}];case'jazm':return[mood(f,'jazm'),{pre:['لَمْ']}];
+  case'lamma':return[mood(f,'jazm'),{pre:['لَمَّا']}];
+  case'qarib':return[o.md,{pre:['قَدْ']}];case'baid':return[o.md,{pre:[KANA[n-1],'قَدْ']}];case'istim':return[f,{pre:[KANA[n-1]]}];
+  case'ihtim':return[o.md,{pre:[n===13?'لَعَلِّي':'لَعَلَّ'+o.att]}];case'taman':return[o.md,{pre:['لَيْتَ'+o.att]}];
+  case'tawk':return[heavy(f),{att:'لَ'}];case'tawkL':{const l=light(f);return l?[l,{att:'لَ'}]:[null,{}];}
+  case'amr':return[amrF(f),{}];case'nahy':return[mood(f,'jazm'),{pre:['لَا']}];
+  case'amrH':return[amrH(f),{}];case'nahyH':return[heavy(f),{pre:['لَا']}];
+  case'lamr':return is2(o)?[amrF(f),{}]:[mood(f,'jazm'),{att:'لِ'}];
+  case'lnahy':return[mood(f,'jazm'),{pre:['لَا']}];
+  case'pmd':return[pasMd(o.md),{}];case'pmu':return[pasMu(f),{}];
+ }}
+function esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function render(k,n,cls){const[f,o]=build(k,n);if(!f)return'<span class="note">—</span>';
+  let h='';(o.pre||[]).forEach(w=>h+=`<span class="pt">${esc(w)}</span> `);
+  if(o.att)h+=`<span class="pt">${o.att}</span>`;
+  if(f[0])h+=`<span class="ad">${f[0]}</span>`;h+=`<span class="rt">${f[1]}</span>`;if(f[2])h+=`<span class="ad">${f[2]}</span>`;
+  return `<span class="ar form${cls?' '+cls:''}" tabindex="0" data-k="${k}" data-s="${n}">${h}</span>`;}
+const formText=(k,n)=>{const[f,o]=build(k,n);return f?plain(f,o):'';};
+const mean=(k,n)=>{const m=meaning(k,n);return L(m[0],m[1]);};
+/* ================= tooltip descriptions ================= */
+const PRE={'يَ':['ya-: third person (he, they)','ইয়া-: নাম পুরুষ (সে, তারা)'],'تَ':['ta-: “she” or any “you”','তা-: “সে (নারী)” বা যেকোনো “তুমি”'],'أَ':['a-: I','আ-: আমি'],'نَ':['na-: we','না-: আমরা'],
+ 'يُ':['yu-: ḍamma on the prefix marks the passive','ইয়ু-: চিহ্নে পেশ মানে কর্মবাচ্য'],'تُ':['tu-: ḍamma marks the passive','তু-: পেশ মানে কর্মবাচ্য'],'أُ':['u-: I, passive','উ-: আমি, কর্মবাচ্য'],'نُ':['nu-: we, passive','নু-: আমরা, কর্মবাচ্য'],
+ 'اُ':['u-: helping hamza (hamzat al-waṣl) because the stem starts with a silent letter','উ-: সাহায্যকারী হামযা (হামযায়ে ওয়াসল), কারণ শব্দটি সাকিন অক্ষর দিয়ে শুরু হচ্ছিল']};
+const SUFP={'':['No ending: the plain past; the final fatḥa belongs to the base.','কোনো প্রত্যয় নেই: মূল অতীত রূপ; শেষের যবর মূলেরই অংশ।'],'ا':['-ā: dual, “two”','-আ: দ্বিবচন, “দুজন”'],'وا':['-ū: masculine plural; the alif is written but silent','-ঊ: পুংলিঙ্গ বহুবচন; আলিফ লেখা হয় কিন্তু উচ্চারিত হয় না'],'تْ':['-at: feminine “she”','-আত: স্ত্রীলিঙ্গ “সে”'],'تَا':['-atā: feminine + dual','-আতা: স্ত্রীলিঙ্গ + দ্বিবচন'],'نَ':['-na: feminine plural (nūn al-niswa)','-না: স্ত্রীলিঙ্গ বহুবচন (নূনে নিসওয়া)'],
+ 'تَ':['-ta: “you”, one man','-তা: “তুমি”, একজন পুরুষ'],'تُمَا':['-tumā: “you two”','-তুমা: “তোমরা দুজন”'],'تُمْ':['-tum: “you”, men','-তুম: “তোমরা”, পুরুষ'],'تِ':['-ti: “you”, one woman','-তি: “তুমি”, একজন নারী'],'تُنَّ':['-tunna: “you”, women','-তুন্না: “তোমরা”, নারী'],'تُ':['-tu: “I”','-তু: “আমি”'],'نَا':['-nā: “we”','-না: “আমরা”']};
+const SUFU={'':['No suffix: the last vowel shows the mood (ḍamma, fatḥa or sukūn).','প্রত্যয় নেই: শেষ হরকত মূড বোঝায় (পেশ, যবর বা সাকিন)।'],'انِ':['-āni: dual; the nūn drops after لَنْ / لَمْ','-আনি: দ্বিবচন; لَنْ / لَمْ-এর পরে নূন পড়ে যায়'],'ونَ':['-ūna: masculine plural; the nūn drops after لَنْ / لَمْ','-ঊনা: পুংলিঙ্গ বহুবচন; لَنْ / لَمْ-এর পরে নূন পড়ে যায়'],'ينَ':['-īna: “you”, one woman; the nūn drops after لَنْ / لَمْ','-ঈনা: “তুমি” (নারী); لَنْ / لَمْ-এর পরে নূন পড়ে যায়'],'نَ':['-na: feminine plural; this nūn never drops','-না: স্ত্রীলিঙ্গ বহুবচন; এই নূন কখনো পড়ে না'],
+ 'ا':['-ā: dual, nūn dropped','-আ: দ্বিবচন, নূন বাদ'],'وا':['-ū: masculine plural, nūn dropped','-ঊ: পুংলিঙ্গ বহুবচন, নূন বাদ'],'ي':['-ī: “you”, one woman, nūn dropped','-ঈ: “তুমি” (নারী), নূন বাদ'],
+ 'نَّ':['-nna: heavy nūn of emphasis','-ন্না: ভারী নূনে তাকীদ'],'انِّ':['-ānni: dual with heavy nūn','-আন্নি: দ্বিবচন + ভারী নূন'],'نَانِّ':['-nānni: feminine plural with heavy nūn','-নান্নি: স্ত্রী বহুবচন + ভারী নূন'],'نْ':['-n: light nūn of emphasis','-ন: হালকা নূনে তাকীদ']};
+const PTD={'سَ':['sa-: future marker joined to the verb','সা-: ক্রিয়ার সঙ্গে যুক্ত ভবিষ্যৎ চিহ্ন'],'لَا':['lā: “not” (with jazm: “do not!”)','লা: “না” (জযমসহ হলে “করো না!”)'],'لَنْ':['lan: “will not”; makes the verb manṣūb','লান: “করবে না”; ক্রিয়াকে মানসূব করে'],'لَمْ':['lam: “did not”; makes the verb majzūm','লাম: “করেনি”; ক্রিয়াকে মাজযূম করে'],'لَمَّا':['lammā: “not yet”; majzūm','লাম্মা: “এখনো নয়”; মাজযূম করে'],
+ 'قَدْ':['qad: confirms that it really happened','কাদ: কাজটি যে সত্যিই হয়েছে তা নিশ্চিত করে'],'لَ':['la-: lām of oath, with the nūn of emphasis','লা-: শপথের লাম, নূনে তাকীদের সঙ্গে'],'لِ':['li-: lām of command, “let …”','লি-: আদেশের লাম, “… করুক”']};
+function describe(k,n){
+  const o=S[n-1],[f,op]=build(k,n),isPast=['md','pmd','qarib','baid','ihtim','taman'].includes(k);
+  const r=[];const row=(lab,e,b)=>r.push(`<span class="k">${lab}</span>${L(e,b)}`);
+  row('Root','ك ت ب stays in order','ك ت ب ক্রমে অপরিবর্তিত');
+  (op.pre||[]).concat(op.att?[op.att]:[]).forEach(p=>{const d=PTD[p]||(p.startsWith('كَ')||p.startsWith('كُ')?['kāna (was), conjugated for the person','কানা (ছিল), পুরুষ অনুযায়ী বদলায়']:p.startsWith('لَعَلّ')||p.startsWith('لَعَلِّ')?['laʿalla + attached pronoun: “perhaps”','লাআল্লা + সংযুক্ত সর্বনাম: “হয়তো”']:p.startsWith('لَيْتَ')?['layta + attached pronoun: “if only”','লাইতা + সংযুক্ত সর্বনাম: “আহা, যদি”']:null);if(d)row('Particle',d[0],d[1]);});
+  if(f[0]&&PRE[f[0]])row('Prefix',PRE[f[0]][0],PRE[f[0]][1]);
+  const sd=(isPast?SUFP:SUFU)[f[2]];if(sd)row('Suffix',sd[0],sd[1]);
+  if(k==='pmd')row('Vowels','Passive: u on ك, i on ت','কর্মবাচ্য: ك-তে পেশ, ت-তে যের');
+  else if(k==='pmu')row('Vowels','Passive: u on the prefix, a on ت','কর্মবাচ্য: চিহ্নে পেশ, ت-তে যবর');
+  else if(isPast&&f[1].endsWith('\u0652'))row('Vowels','ب takes sukūn before a consonant suffix','ব্যঞ্জন দিয়ে শুরু প্রত্যয়ের আগে ب সাকিন হয়');
+  else if(!isPast)row('Vowels','ḍamma on ت (the middle letter) marks Bāb Naṣara','মাঝের অক্ষর ت-তে পেশ: বাবে নাসারা-র চিহ্ন');
+  const m=meaning(k,n),kn=KN[k];
+  return `<span class="ar">${plain(f,op)}</span><b>${L(kn[0],kn[1])}</b> · ${n}. <span dir="rtl">${o.name}</span><br>“${L(m[0],m[1])}”<hr style="border:0;border-top:1px solid rgba(255,255,255,.25);margin:6px 0">${r.join('<br>')}`;
+}
+
+/* ================= section helpers ================= */
+const CH=[['overview','Map','মানচিত্র'],['basics','Foundations','ভিত্তি'],['sighah','14 ṣīghahs','১৪ সীগাহ'],['master','Master table','মূল ছক'],['past','Past','মাযী'],['present','Present & future','মুযারে’'],['command','Command','আমর ও নাহী'],['emphasis','Emphasis','তাকীদ'],['passive','Passive','মাজহূল'],['nouns','Derived nouns','মুশতাক্কাত'],['saghir','Ṣarf ṣaghīr','সরফে সগীর'],['abwab','Six abwāb','ছয় বাব'],['mazid','Mazīd forms','মাযীদ ফীহ'],['aqsam','Seven types','হাফত আকসাম'],['bridge','Bridge','তুলনা'],['glossary','Glossary','পরিভাষা'],['quiz','Quiz','কুইজ']];
+function head(id,en,bn,ar,den,dbn){const i=CH.findIndex(c=>c[0]===id);
+  return `<div class="lvlhead"><span class="lvlno">${i}</span><h2>${L(en,bn)}</h2>${ar?`<span class="ar">${ar}</span>`:''}<p>${LB(den,dbn)}</p></div>`;}
+function grpRow(g,cols){const G=GRP[g];return `<tr class="grp" style="--t:${G.t};--c:${G.c}"><td colspan="${cols}">${L(G.en,G.bn)} <span class="ar">${G.ar}</span></td></tr>`;}
+function slotTable(cols,rowFn,filter){ // cols: [{h:html,cls}], rowFn(o)->cells html
+  let h='<thead><tr><th class="num">#</th>'+cols.map(c=>`<th class="${c.cls||''}">${c.h}</th>`).join('')+'</tr></thead><tbody>';let last='';
+  S.filter(filter||(()=>true)).forEach(o=>{const G=GRP[o.g];if(o.g!==last){h+=grpRow(o.g,cols.length+1);last=o.g;}
+    h+=`<tr data-slot="${o.n}" style="--c:${G.c};--t:${G.t}"><td class="num">${o.n}</td>${rowFn(o)}</tr>`;});
+  return h+'</tbody>';}
+const TH=(en,bn,ar)=>`${L(en,bn)}${ar?`<span class="ar">${ar}</span>`:''}`;
+const prCell=o=>`<td class="pr"><span class="ar">${o.pr}</span> ${L(o.who,o.bnP)}</td>`;
+const nmCell=o=>`<td class="nm"><span class="ar">${o.name}</span><span class="bn">${o.bnName}</span></td>`;
+
+/* ================= 0. hero + map ================= */
+function secHero(){
+ return `<div class="heroblock" id="overview"><div class="hero"><div>
+  <h1>${LB('Arabic Ṣarf: one root, one system','আরবি সরফ: এক মূল, এক পদ্ধতি')}</h1>
+  <p class="lede">${LB('Ṣarf (morphology) shows how one Arabic word takes many shapes. Three root letters carry the meaning; prefixes, suffixes, vowels and small particles tell you who acts, how many, when, and how. Everything here grows from one verb:','সরফ (শব্দরূপতত্ত্ব) দেখায়, একটি আরবি শব্দ কীভাবে নানা রূপ নেয়। তিনটি মূল অক্ষর অর্থ বহন করে; উপসর্গ, প্রত্যয়, হরকত ও ছোট অব্যয় বলে দেয় কে কাজ করছে, কতজন, কখন ও কীভাবে। এখানে সবকিছু একটি ক্রিয়া থেকে গড়া:')}
+   <span class="ar" style="font-size:24px">كَتَبَ يَكْتُبُ كِتَابَةً</span> ${L('“to write”','“লেখা”')}</p>
+  <div class="rootword" aria-label="Root letters kaf, ta, ba">
+   <div class="rl"><span class="ar">ك</span><small>k</small><small><span class="ar">فَاءُ الْفِعْل</span></small><small>${L('1st root letter','ফা কালিমা')}</small></div>
+   <div class="rl"><span class="ar">ت</span><small>t</small><small><span class="ar">عَيْنُ الْفِعْل</span></small><small>${L('middle letter','আইন কালিমা')}</small></div>
+   <div class="rl"><span class="ar">ب</span><small>b</small><small><span class="ar">لَامُ الْفِعْل</span></small><small>${L('last letter','লাম কালিমা')}</small></div>
+  </div>
+  <div class="question4">
+   <div style="border-color:var(--g)"><b>${L('Who?','কে?')}</b>${L('he, you, I','সে, তুমি, আমি')}</div>
+   <div style="border-color:var(--m)"><b>${L('How many?','কতজন?')}</b>${L('one, two, many','এক, দুই, বহু')}</div>
+   <div style="border-color:var(--f)"><b>${L('Male or female?','পুরুষ না নারী?')}</b>${L('gender','লিঙ্গ')}</div>
+   <div style="border-color:var(--past)"><b>${L('When and how?','কখন ও কীভাবে?')}</b>${L('tense, command, passive','কাল, আদেশ, কর্মবাচ্য')}</div>
+  </div></div>
+  <div><div class="mapwrap"><svg class="map" id="map" viewBox="0 0 1200 690" role="img" aria-label="Master map of Arabic Ṣarf"></svg></div>
+  <div class="tracer"><h3>${L('Follow one person through the system','একজন ব্যক্তিকে পুরো পদ্ধতিতে অনুসরণ করুন')}</h3><div class="chips" id="chips"></div><div class="chain" id="chain" aria-live="polite"></div></div>
+ </div></div></div>`;}
+function buildMap(){
+ const N={root:[600,345],
+  haft:[310,80,'قَالَ  دَعَا  مَدَّ','Seven root types','সাত প্রকার মূল','aqsam','var(--weak)'],
+  abwab:[600,72,'بَابُ نَصَرَ','Six basic families','ছয় বাব','abwab','var(--ink)'],
+  mazid:[850,78,'كَاتَبَ  اِسْتَكْتَبَ','Added-letter forms','মাযীদ ফীহ','mazid','var(--pres)'],
+  pastc:[118,220,'قَدْ كَتَبَ  كَانَ يَكْتُبُ','Six kinds of past','মাযীর ছয় প্রকার','past','var(--past)'],
+  past:[345,240,'الْمَاضِي  كَتَبَ','Past: he wrote','অতীত: সে লিখল','past','var(--past)'],
+  pres:[860,250,'الْمُضَارِع  يَكْتُبُ','Present: he writes','বর্তমান: সে লেখে','present','var(--pres)'],
+  emph:[1082,150,'لَيَكْتُبَنَّ','Emphatic: will surely write','তাকীদ: অবশ্যই লিখবে','emphasis','var(--emph)'],
+  fut:[1082,345,'سَيَكْتُبُ','Future: he will write','ভবিষ্যৎ: সে লিখবে','present','var(--fut)'],
+  amr:[860,470,'الْأَمْر  اُكْتُبْ','Command: Write!','আদেশ: লেখো!','command','var(--amr)'],
+  nahy:[1082,580,'لَا تَكْتُبْ','Prohibition: Do not write!','নিষেধ: লিখো না!','command','var(--nahy)'],
+  der:[118,400,'كَاتِبٌ  مَكْتُوبٌ','Nouns from the root','মূল থেকে গঠিত বিশেষ্য','nouns','var(--der)'],
+  pass:[345,480,'كُتِبَ  يُكْتَبُ','Passive: it was written','কর্মবাচ্য: লেখা হলো','passive','var(--pass)'],
+  saghir:[118,600,'صَرْفٌ صَغِيرٌ','Daily recitation','সরফে সগীর (গারদান)','saghir','var(--der)'],
+  sig:[600,620,'هُوَ … نَحْنُ','14 ṣīghahs: who acts?','১৪ সীগাহ: কে করছে?','sighah','var(--g)']};
+ const E=[['root','abwab'],['root','haft'],['root','mazid'],['root','past'],['root','pres'],['root','pass'],['root','der'],['root','sig'],['past','pastc'],['pres','fut'],['pres','emph'],['pres','amr'],['amr','nahy'],['der','saghir'],['pass','saghir',1],['sig','past',1],['sig','pres',1]];
+ let s='';
+ E.forEach(([a,b,d])=>{const P=N[a],Q=N[b];const mx=(P[0]+Q[0])/2,my=(P[1]+Q[1])/2;const cx=mx+(Q[1]-P[1])*.12,cy=my-(Q[0]-P[0])*.08;
+  s+=`<path class="edge${d?' dash':''}" d="M${P[0]} ${P[1]} Q${cx} ${cy} ${Q[0]} ${Q[1]}" stroke="${Q[6]}" opacity="${d?.5:.8}"/>`;});
+ s+=`<g class="node" tabindex="0" role="link" data-go="basics" aria-label="Root"><circle cx="600" cy="345" r="94" fill="var(--ink)"/><text x="600" y="352" text-anchor="middle" font-family="Amiri,'Noto Naskh Arabic',FreeSerif,serif" font-size="52" font-weight="700" fill="var(--surface)" direction="rtl">ك ت ب</text><text class="en" x="600" y="392" text-anchor="middle" style="fill:var(--surface)">root: to write</text><text class="bn" x="600" y="411" text-anchor="middle" style="fill:var(--surface)">মূল: লেখা</text></g>`;
+ Object.entries(N).forEach(([k,v])=>{if(k==='root')return;const w=224,h=92;
+  s+=`<g class="node" tabindex="0" role="link" data-go="${v[5]}" aria-label="${v[3]}"><rect class="box" x="${v[0]-w/2}" y="${v[1]-h/2}" width="${w}" height="${h}" rx="12" stroke="${v[6]}"/><rect x="${v[0]-w/2}" y="${v[1]-h/2}" width="7" height="${h}" rx="3" fill="${v[6]}"/><text class="a" x="${v[0]+3}" y="${v[1]-6}" text-anchor="middle" direction="rtl">${v[2]}</text><text class="en" x="${v[0]+3}" y="${v[1]+19}" text-anchor="middle">${v[3]}</text><text class="bn" x="${v[0]+3}" y="${v[1]+38}" text-anchor="middle">${v[4]}</text></g>`;});
+ $('#map').innerHTML=s;
+ $('#map').addEventListener('click',e=>{const g=e.target.closest('.node');if(g)go(g.dataset.go);});
+ $('#map').addEventListener('keydown',e=>{const g=e.target.closest('.node');if(g&&(e.key==='Enter'||e.key===' ')){e.preventDefault();go(g.dataset.go);}});
+ let c='';['g','m','f'].forEach(g=>{const G=GRP[g];c+=`<div class="chipgrp"><span>${L(G.en.split(' ')[0],G.bn.split(' ')[0])}</span>`;
+  S.filter(o=>o.g===g).forEach(o=>c+=`<button class="chip" style="--c:${G.c}" data-slot="${o.n}" aria-pressed="false" title="${o.n}. ${o.who}">${o.pr}</button>`);c+='</div>';});
+ $('#chips').innerHTML=c;
+}
+
+/* ================= 1. foundations ================= */
+function secBasics(){
+ const pair=(t,en,bn,ex)=>`<div class="pair"><span class="ar t">${t}</span>${L(en,bn)}<span class="ar ex">${ex}</span></div>`;
+ return `<section class="lvl" id="basics">${head('basics','Foundations: what Ṣarf studies','ভিত্তি: সরফ কী শেখায়','مَبَادِئُ عِلْمِ الصَّرْفِ','Four ideas come before any table: what Ṣarf is, the three kinds of word, root and pattern, and the pairs every verb is sorted by.','যেকোনো ছকের আগে চারটি ধারণা: সরফ কী, শব্দের তিন প্রকার, মূল ও ওজন, এবং যেসব জোড়া দিয়ে প্রতিটি ক্রিয়াকে চেনা হয়।')}
+ <div class="grid2">
+  <div class="panel c" style="--c:var(--ink)"><h3>${L('Ṣarf and Naḥw','সরফ ও নাহু')}<span class="ar">الصَّرْفُ وَالنَّحْوُ</span></h3>
+   <p><b>${L('Ṣarf','সরফ')}</b>: ${L('the shape of one word.','একটি শব্দের গঠন।')} <span class="ar ai">كَتَبَ ← كَتَبْتُ</span> ${L('“he wrote” becomes “I wrote”.','“সে লিখল” থেকে “আমি লিখলাম”।')}</p>
+   <p><b>${L('Naḥw','নাহু')}</b>: ${L('the job and ending of a word in a sentence.','বাক্যে শব্দের ভূমিকা ও শেষ হরকত।')} <span class="ar ai">كَتَبَ الطَّالِبُ الدَّرْسَ</span> ${L('“The student wrote the lesson.”','“ছাত্রটি পাঠ লিখল।”')}</p>
+   <p class="note">${L('A classic saying:','প্রসিদ্ধ উক্তি:')} <span class="ar ai">الصَّرْفُ أُمُّ الْعُلُومِ وَالنَّحْوُ أَبُوهَا</span> ${L('“Ṣarf is the mother of the sciences and Naḥw their father.”','“সরফ সকল জ্ঞানের মা, আর নাহু তার পিতা।”')}</p>
+  </div>
+  <div class="panel c" style="--c:var(--ink)"><h3>${L('Three kinds of word','শব্দের তিন প্রকার')}<span class="ar">أَقْسَامُ الْكَلِمَةِ</span></h3>
+   <div class="kinds">
+    <div><span class="ar">اِسْم</span><b>${L('Noun','ইসম (বিশেষ্য)')}</b><br>${L('names a thing','নাম বোঝায়')}<br><span class="ar ai">كِتَابٌ</span> ${L('book','বই')}</div>
+    <div><span class="ar">فِعْل</span><b>${L('Verb','ফে’ল (ক্রিয়া)')}</b><br>${L('action with time','সময়যুক্ত কাজ')}<br><span class="ar ai">كَتَبَ</span> ${L('wrote','লিখল')}</div>
+    <div><span class="ar">حَرْف</span><b>${L('Particle','হরফ (অব্যয়)')}</b><br>${L('meaning only with others','অন্য শব্দের সাথে অর্থ দেয়')}<br><span class="ar ai">فِي، لَمْ</span> ${L('in, did not','মধ্যে, -নি')}</div>
+   </div>
+   <p class="note">${L('Ṣarf studies nouns and verbs that change form. Particles never change.','সরফ পরিবর্তনশীল ইসম ও ফে’ল নিয়ে আলোচনা করে। হরফের রূপ বদলায় না।')}</p>
+  </div></div>
+ <div class="trio mt">
+  <div class="panel c" style="--c:var(--ink)"><h3>${L('Root','মূল (ধাতু)')}<span class="ar">مَادَّة</span></h3><span class="ar big">ك ت ب</span>
+   <p>${L('Three consonants carry the idea “writing”. Their order never changes.','তিনটি ব্যঞ্জনবর্ণ “লেখা” ধারণা বহন করে। এদের ক্রম কখনো বদলায় না।')}</p>
+   <div class="family"><span class="w"><span class="ar">كِتَابٌ</span>${L('book','বই')}</span><span class="w"><span class="ar">مَكْتَبٌ</span>${L('office, desk','অফিস, ডেস্ক')}</span><span class="w"><span class="ar">مَكْتَبَةٌ</span>${L('library','গ্রন্থাগার')}</span><span class="w"><span class="ar">كَاتِبٌ</span>${L('writer','লেখক')}</span></div></div>
+  <div class="panel c" style="--c:var(--add)"><h3>${L('Pattern (the scale)','ওজন (মীযান)')}<span class="ar">وَزْن</span></h3><span class="ar big">فَعَلَ / يَفْعُلُ</span>
+   <p>${L('Grammarians use ف ع ل as placeholders for any root. Put ك ت ب into them and you get كَتَبَ / يَكْتُبُ.','ব্যাকরণবিদরা যেকোনো মূলের জন্য ف ع ل-কে মাপকাঠি হিসেবে ব্যবহার করেন। এতে ك ت ب বসালে হয় كَتَبَ / يَكْتُبُ।')}</p></div>
+  <div class="panel c" style="--c:var(--past)"><h3>${L('Conjugated form','সীগাহ (রূপ)')}<span class="ar">صِيغَة</span></h3><span class="ar big"><span class="rt">كَتَبْ</span><span class="ad">تُ</span></span>
+   <p>${L('Pattern plus additions. The suffix تُ means “I”, so this single word means “I wrote”. No separate word for “I” is needed.','ওজন ও অতিরিক্ত অংশ মিলে সীগাহ। প্রত্যয় تُ অর্থ “আমি”, তাই এই একটি শব্দই “আমি লিখলাম”। আলাদা “আমি” শব্দ লাগে না।')}</p></div>
+ </div>
+ <div class="panel mt"><h3>${L('Six pairs that sort every verb','যে ছয় জোড়া দিয়ে প্রতিটি ক্রিয়া চেনা হয়')}</h3>
+  <div class="pairs">
+   ${pair('مُجَرَّد / مَزِيد فِيه','root letters only / with added letters','শুধু মূল অক্ষর / অতিরিক্ত অক্ষরসহ','كَتَبَ / كَاتَبَ')}
+   ${pair('لَازِم / مُتَعَدٍّ','intransitive / transitive (takes an object)','অকর্মক / সকর্মক (কর্ম নেয়)','جَلَسَ / كَتَبَ الدَّرْسَ')}
+   ${pair('مُتَصَرِّف / جَامِد','takes all forms / frozen in one form','সব রূপ নেয় / এক রূপে স্থির','كَتَبَ / لَيْسَ، نِعْمَ، عَسَى')}
+   ${pair('صَحِيح / مُعْتَلّ','sound / contains a weak letter و ي ا','সুস্থ / দুর্বল অক্ষর و ي ا আছে','كَتَبَ / قَالَ')}
+   ${pair('مَعْلُوم / مَجْهُول','active / passive','কর্তৃবাচ্য / কর্মবাচ্য','كَتَبَ / كُتِبَ')}
+   ${pair('مُثْبَت / مَنْفِيّ','affirmative / negative','হ্যাঁবোধক / নাবোধক','كَتَبَ / مَا كَتَبَ')}
+  </div>
+  <p class="note">${L('Only transitive verbs have a normal passive: “the lesson was written” works, “was sat” does not.','শুধু সকর্মক ক্রিয়ার স্বাভাবিক কর্মবাচ্য হয়: “পাঠ লেখা হলো” হয়, কিন্তু “বসা হলো” (অকর্মক) সাধারণত নয়।')}</p></div>
+ <div class="legend" aria-label="Colour key">
+  <span><i style="background:var(--ink)"></i>${L('Root letters and their vowels','মূল অক্ষর ও তার হরকত')}</span>
+  <span><i style="background:var(--add)"></i>${L('Added prefix or suffix','যুক্ত উপসর্গ বা প্রত্যয়')}</span>
+  <span><i style="background:var(--pt-bg);outline:1px solid var(--pt-ink)"></i>${L('Particle or helper word','অব্যয় বা সহায়ক শব্দ')}</span>
+  <span class="note">${L('Hover or tap any Arabic form for a breakdown.','বিশ্লেষণ দেখতে যেকোনো আরবি রূপের ওপর মাউস রাখুন বা ট্যাপ করুন।')}</span>
+ </div></section>`;}
+
+/* ================= 2. 14 ṣīghahs ================= */
+function secSighah(){
+ const nums=[['s','Singular','একবচন','وَاحِد'],['d','Dual','দ্বিবচন','تَثْنِيَة'],['p','Plural','বহুবচন','جَمْع']];
+ const gens=[['m','Masc.','পুং','مُذَكَّر'],['f','Fem.','স্ত্রী','مُؤَنَّث']];
+ const cell=o=>`<div class="pcell" role="button" tabindex="0" data-slot="${o.n}"><span class="no">${o.n}</span><span class="ar att">ـ${o.att}</span><span class="ar">${o.pr}</span>${L(o.who,o.bnP)}</div>`;
+ let g='';
+ ['g','m'].forEach(k=>{const G=GRP[k];
+  g+=`<div class="pg" style="--c:${G.c};--t:${G.t}"><h3>${L(G.en,G.bn)}<span class="ar">${G.ar}</span></h3><div class="note">${L(G.sen+', 6 positions',G.sbn+', ৬টি সীগাহ')}</div><div class="pgt"><div></div>`;
+  nums.forEach(n=>g+=`<div class="hd">${L(n[1],n[2])}<span class="ar">${n[3]}</span></div>`);
+  gens.forEach(ge=>{g+=`<div class="rh">${L(ge[1],ge[2])}<span class="ar">${ge[3]}</span></div>`;nums.forEach(n=>g+=cell(S.find(x=>x.g===k&&x.gen===ge[0]&&x.num===n[0])));});
+  g+='</div></div>';});
+ const G=GRP.f;
+ g+=`<div class="pg" style="--c:${G.c};--t:${G.t}"><h3>${L(G.en,G.bn)}<span class="ar">${G.ar}</span></h3><div class="note">${L(G.sen+', 2 positions',G.sbn+', ২টি সীগাহ')}</div><div class="pgt first"><div class="hd">${L('Singular','একবচন')}<span class="ar">وَاحِد</span></div><div class="hd">${L('Plural','বহুবচন')}<span class="ar">جَمْع</span></div>${cell(S[12])}${cell(S[13])}</div></div>`;
+ return `<section class="lvl" id="sighah">${head('sighah','The 14 ṣīghahs: who is acting?','১৪ সীগাহ: কে কাজ করছে?','الصِّيَغُ الْأَرْبَعَ عَشْرَةَ','A ṣīghah is one grammatical position: a mix of person, number and gender. Click a cell to light that position up in every table on the page.','সীগাহ হলো একটি ব্যাকরণগত অবস্থান: পুরুষ, বচন ও লিঙ্গের সমন্বয়। কোনো ঘরে ক্লিক করুন, পৃষ্ঠার প্রতিটি ছকে সেই সীগাহ আলোকিত হবে।')}
+ <div class="pgroups">${g}</div>
+ <div class="why">
+  <div class="panel"><h3>${L('Why 14?','কেন ১৪টি?')}</h3><p class="formula">${L('Third person: <b>3</b> numbers × <b>2</b> genders = <b>6</b>','গায়েব: <b>৩</b> বচন × <b>২</b> লিঙ্গ = <b>৬</b>')}<br>${L('Second person: <b>3</b> × <b>2</b> = <b>6</b>','মুখাতাব: <b>৩</b> × <b>২</b> = <b>৬</b>')}<br>${L('First person: <b>2</b> (no gender, no separate dual)','মুতাকাল্লিম: <b>২</b> (লিঙ্গভেদ নেই, আলাদা দ্বিবচন নেই)')}</p><p class="formula"><b>6 + 6 + 2 = 14</b></p></div>
+  <div class="panel"><h3>${L('Three ideas in plain words','সহজ ভাষায় তিনটি ধারণা')}</h3>
+   <p>${LB('<b>Person</b>: the speaker (I, we), the listener (you) or someone else (he, she, they).','<b>পুরুষ</b>: বক্তা (আমি, আমরা), শ্রোতা (তুমি) বা অন্য কেউ (সে, তারা)।')}</p>
+   <p>${LB('<b>Number</b>: one, exactly two (the dual, missing in English and Bangla), or three or more.','<b>বচন</b>: এক, ঠিক দুই (দ্বিবচন, যা ইংরেজি ও বাংলায় নেই), অথবা তিন বা তার বেশি।')}</p>
+   <p>${LB('<b>Gender</b>: masculine or feminine. Arabic marks it on “you” and “they”, and on the verb.','<b>লিঙ্গ</b>: পুংলিঙ্গ বা স্ত্রীলিঙ্গ। আরবিতে “তুমি”, “তারা” এবং ক্রিয়াতেও লিঙ্গ বোঝানো হয়।')}</p></div>
+  <div class="panel"><h3>${L('14 positions, fewer spellings','১৪ সীগাহ, কম বানান')}</h3>
+   <p>${LB('In the past, كَتَبْتُمَا serves both “you two” positions (8 and 11): 13 different words. In the present, تَكْتُبُ means “she” and “you (m.)”, and تَكْتُبَانِ covers three positions: 11 different words.','মাযীতে كَتَبْتُمَا দুটি “তোমরা দুজন” সীগাহতেই (৮ ও ১১) বসে: মোট ১৩টি আলাদা শব্দ। মুযারে’তে تَكْتُبُ মানে “সে (নারী)” ও “তুমি (পুরুষ)”, আর تَكْتُبَانِ তিনটি সীগাহতে বসে: মোট ১১টি আলাদা শব্দ।')}</p>
+   <p class="note">${L('Grammar still counts 14, because who acts is different. Context or a pronoun tells them apart.','তবু ১৪টিই গণনা করা হয়, কারণ কর্তা ভিন্ন। প্রসঙ্গ বা সর্বনাম দিয়ে পার্থক্য বোঝা যায়।')}</p></div>
+ </div>
+ <div class="tip">${LB('The small grey ending in each cell is the attached pronoun (ḍamīr muttaṣil). It joins verbs and particles: كَتَبَهُ “he wrote it”, لَيْتَنِي “if only I…”, لَعَلَّكَ “perhaps you…”.','প্রতিটি ঘরের ছোট ধূসর অংশটি সংযুক্ত সর্বনাম (যমীরে মুত্তাসিল)। এটি ক্রিয়া ও অব্যয়ের সাথে যুক্ত হয়: كَتَبَهُ “সে তা লিখল”, لَيْتَنِي “আহা, যদি আমি…”, لَعَلَّكَ “হয়তো তুমি…”।')}</div>
+ <p class="note mt">${L('Order: South Asian madrasa books start with هُوَ and end with the speaker; many Arab-world books start with أَنَا. The forms are the same. Position 14, نَحْنُ, also covers “we two” and is used by men and women alike.','ক্রম: উপমহাদেশের মাদরাসার কিতাব هُوَ দিয়ে শুরু করে বক্তায় শেষ করে; আরব বিশ্বের অনেক বই أَنَا দিয়ে শুরু করে। রূপ একই। ১৪ নং نَحْنُ “আমরা দুজন”-ও বোঝায় এবং নারী-পুরুষ সবাই ব্যবহার করে।')}</p></section>`;}
+
+/* ================= 3. master table ================= */
+function secMaster(){
+ const t=slotTable([{h:TH('Ṣīghah','সীগাহ','الصِّيغَة')},{h:TH('Pronoun','সর্বনাম','الضَّمِير')},{h:TH('Past','মাযী','الْمَاضِي'),cls:'past'},{h:TH('Present','মুযারে’','الْمُضَارِع'),cls:'pres'},{h:TH('Future','ভবিষ্যৎ','الْمُسْتَقْبَل'),cls:'fut'},{h:TH('Meaning','অর্থ')}],
+  o=>{const v=BV[bc(o)];return `${nmCell(o)}${prCell(o)}<td class="f">${render('md',o.n)}</td><td class="f">${render('mu',o.n)}</td><td class="f">${render('fu',o.n)}</td><td class="mn">${L(`${o.who} wrote / ${third(o)?'writes':'write'} / will write`,`${o.bnS} ${v.past} / ${v.pres} / ${v.fut}`)}</td>`;});
+ const pastSigns=S.map(o=>`<span style="--t:${GRP[o.g].t}"><span class="ar">ـــ${o.md[2]||'َ'}</span><span class="ar" style="font-size:15px;color:var(--muted)">${o.pr}</span></span>`).join('');
+ const presSigns=S.map(o=>`<span style="--t:${GRP[o.g].t}"><span class="ar">${o.mu[0]}ـــ${o.mu[2]||'ُ'}</span><span class="ar" style="font-size:15px;color:var(--muted)">${o.pr}</span></span>`).join('');
+ return `<section class="lvl wide" id="master">${head('master','The master conjugation table','মূল গারদান ছক','الْمَاضِي وَالْمُضَارِعُ وَالْمُسْتَقْبَلُ','The same 14 positions, read across. The root stays; the coloured additions change. Past changes at the end; present changes at the start and sometimes the end; the future is سَ + present.','একই ১৪ সীগাহ পাশাপাশি। মূল অক্ষর স্থির, রঙিন অংশ বদলায়। মাযীতে পরিবর্তন শেষে; মুযারে’তে শুরুতে, কখনো শেষেও; ভবিষ্যৎ = سَ + মুযারে’।')}
+ <div class="tw"><table>${t}</table></div>
+ <div class="grid2 mt">
+  <div class="panel c" style="--c:var(--past)"><h3>${L('Past signs: endings only','মাযীর চিহ্ন: শুধু শেষাংশ')}</h3><div class="signs">${pastSigns}</div></div>
+  <div class="panel c" style="--c:var(--pres)"><h3>${L('Present signs: prefix + ending','মুযারে’র চিহ্ন: শুরু + শেষ')}</h3><div class="signs">${presSigns}</div></div>
+ </div>
+ <p class="note">${L('Present also means “is writing”: يَكْتُبُ = “he writes” or “he is writing”.','মুযারে’ “লিখছে” অর্থও দেয়: يَكْتُبُ = “সে লেখে” বা “সে লিখছে”।')}</p></section>`;}
+/* ================= 4. past ================= */
+const PASTK=[
+ ['md','مَاضِي مُطْلَق','Simple past','সাধারণ অতীত','mutlaq','The plain past: a completed action. No particle.','সাধারণ অতীত: সম্পন্ন কাজ। কোনো অব্যয় নেই।'],
+ ['qarib','مَاضِي قَرِيب','Near past (present perfect)','নিকট অতীত (পুরাঘটিত বর্তমান)','qarib','قَدْ confirms the action and often ties it to now. It does not always mean “recently”.','قَدْ কাজটি নিশ্চিত করে এবং প্রায়ই বর্তমানের সাথে যুক্ত করে। সবসময় “এইমাত্র” অর্থ নয়।'],
+ ['baid','مَاضِي بَعِيد','Distant past (past perfect)','দূর অতীত (পুরাঘটিত অতীত)','baid','كَانَ moves the frame back: done before another past moment. Also said كَانَ كَتَبَ.','كَانَ সময়কে আরও পেছনে নেয়: অতীতের আরেক মুহূর্তের আগেই কাজ শেষ। كَانَ كَتَبَ-ও বলা হয়।'],
+ ['istim','مَاضِي اِسْتِمْرَارِي','Continuous / habitual past','ঘটমান / নিত্যবৃত্ত অতীত','istim','كَانَ + present: ongoing or habitual in the past.','كَانَ + মুযারে’: অতীতে চলমান বা অভ্যাসগত কাজ।'],
+ ['ihtim','مَاضِي اِحْتِمَالِي','Possible past','সম্ভাব্য অতীত','ihtim','لَعَلَّ adds possibility or hope; the verb is unchanged.','لَعَلَّ সম্ভাবনা বা আশা যোগ করে; ক্রিয়া অপরিবর্তিত।'],
+ ['taman','مَاضِي تَمَنَّائِي','Wishful past','আকাঙ্ক্ষামূলক অতীত','tamanni','لَيْتَ voices a wish, often one that cannot come true.','لَيْتَ আকাঙ্ক্ষা প্রকাশ করে, প্রায়ই যা পূরণ হওয়ার নয়।']];
+function tl(kind){let m='';
+ if(kind==='mutlaq')m='<circle cx="130" cy="20" r="7" fill="var(--past)"/>';
+ if(kind==='qarib')m='<circle cx="185" cy="20" r="7" fill="var(--past)"/><path d="M192 20 H226" stroke-width="3" stroke-dasharray="3 3"/>';
+ if(kind==='baid')m='<circle cx="70" cy="20" r="7" fill="var(--past)"/><path d="M150 8 V32" stroke-width="2"/>';
+ if(kind==='istim')m='<rect x="70" y="14" width="110" height="12" rx="6" fill="var(--past)" opacity=".75"/>';
+ if(kind==='ihtim')m='<circle cx="130" cy="20" r="7" fill="none" stroke="var(--past)" stroke-width="2.5" stroke-dasharray="3 2"/>';
+ if(kind==='tamanni')m='<circle cx="130" cy="20" r="7" fill="none" stroke="var(--past)" stroke-width="2.5"/><path d="M124 14 L136 26 M136 14 L124 26" stroke="var(--past)" stroke-width="2"/>';
+ return `<svg class="tl" viewBox="0 0 300 40" aria-hidden="true"><line x1="10" y1="20" x2="290" y2="20" stroke-width="1.5"/><line x1="230" y1="8" x2="230" y2="32" stroke-width="2.5"/><text x="238" y="14" class="now">now</text>${m}</svg>`;}
+function secPast(){
+ const cards=PASTK.map((c,i)=>`<button class="mc" data-pk="${c[0]}" aria-pressed="${i===0}"><div class="hdr"><span class="ar">${c[1]}</span><small>${i+1}. ${L(c[2],c[3])}</small></div>${tl(c[4])}<span class="ex">${render(c[0],c[0]==='taman'?13:1)}</span><div class="tr">${mean(c[0],c[0]==='taman'?13:1)}</div><p>${LB(c[5],c[6])}</p></button>`).join('');
+ const neg=[[`<span class="pt">مَا</span> كَتَبَ`,'He did not write','সে লেখেনি','مَاضِي مَنْفِي'],[render('jazm',1),'He did not write (firm denial)','সে লেখেনি (দৃঢ় অস্বীকার)','نَفْيِ جَحْد بِلَمْ'],[render('lamma',1),'He has not written yet','সে এখনো লেখেনি','نَفْيِ جَحْد بِلَمَّا'],[`<span class="pt">لَقَدْ</span> كَتَبَ`,'He has certainly written','সে অবশ্যই লিখেছে','تَأْكِيد'],[`<span class="pt">أَ</span>كَتَبَ؟`,'Did he write?','সে কি লিখেছে?','اِسْتِفْهَام'],[`<span class="pt">هَلْ</span> كَتَبَ؟`,'Did he write?','সে কি লিখল?','اِسْتِفْهَام']];
+ return `<section class="lvl wide" id="past">${head('past','Branch A: the past and its six kinds','শাখা ক: মাযী ও তার ছয় প্রকার','الْمَاضِي وَأَقْسَامُهُ','كَتَبَ reports a completed action. South Asian Ṣarf books teach six kinds of past. Tap a card to see that kind in all 14 positions.','كَتَبَ সম্পন্ন কাজ বোঝায়। উপমহাদেশের সরফের কিতাবে মাযীর ছয় প্রকার পড়ানো হয়। যেকোনো কার্ডে চাপ দিন, সেটি ১৪ সীগাহতে দেখুন।')}
+ <div class="mcons" id="mcons">${cards}</div>
+ <div class="tw mt"><table id="pastConj"></table></div>
+ <div class="warn">${LB('These six are classroom meaning categories, not six separate conjugation tables. كَتَبَ keeps its 14 forms; a particle or كَانَ changes the meaning. Notice that كَانَ and the pronoun after لَعَلَّ / لَيْتَ change with the person too.','এই ছয়টি পাঠদানের অর্থভিত্তিক প্রকার, আলাদা ছয়টি গারদান নয়। كَتَبَ-এর ১৪ রূপ একই থাকে; অব্যয় বা كَانَ অর্থ বদলায়। লক্ষ করুন, كَانَ এবং لَعَلَّ / لَيْتَ-এর পরের সর্বনামও পুরুষ অনুযায়ী বদলায়।')}</div>
+ <h3 class="mt">${L('Negation, emphasis and questions in the past','অতীতে নাবোধক, জোর ও প্রশ্ন')}</h3>
+ <div class="cards">${neg.map(x=>`<div><span class="ar x">${x[0]}</span><span class="ar lbl">${x[3]}</span>${L(x[1],x[2])}</div>`).join('')}</div></section>`;}
+function fillPast(k){
+ const c=PASTK.find(x=>x[0]===k);
+ $('#pastConj').innerHTML=slotTable([{h:TH('Pronoun','সর্বনাম')},{h:TH(c[2],c[3],c[1]),cls:'past'},{h:TH('Meaning','অর্থ')}],o=>`${prCell(o)}<td class="f">${render(k,o.n)}</td><td class="mn">${mean(k,o.n)}</td>`);
+ document.querySelectorAll('#mcons .mc').forEach(b=>b.setAttribute('aria-pressed',b.dataset.pk===k));
+ afterRender($('#pastConj'));}
+
+/* ================= 5. present & future ================= */
+function secPresent(){
+ const P=[['أَ','a-','আ-','I','আমি',[13]],['نَ','na-','না-','we','আমরা',[14]],['يَ','ya-','ইয়া-','he, they','সে, তারা',[1,2,3,6]],['تَ','ta-','তা-','she, you','সে (নারী), তুমি',[4,5,7,8,9,10,11,12]]];
+ const pf=P.map(p=>`<div class="pfx"><span class="ar L">${p[0]}</span> <b>${L(p[1],p[2])}</b> ${L(p[3],p[4])}<div class="who">${p[5].map(n=>{const G=GRP[S[n-1].g];return `<span style="--c:${G.c};--t:${G.t}" title="${n}. ${S[n-1].who}">${S[n-1].pr}</span>`;}).join('')}</div></div>`).join('');
+ const ng=[['mu','Present','বর্তমান',''],['fu','Future','ভবিষ্যৎ',''],['sawfa','Future with سَوْفَ','سَوْفَ দিয়ে ভবিষ্যৎ',''],['neg','Present negative','বর্তমান নাবোধক','مُضَارِع مَنْفِي'],['nasb','Future negative','ভবিষ্যৎ নাবোধক','نَفْيِ تَأْكِيد بِلَنْ'],['jazm','Past meaning with لَمْ','لَمْ দিয়ে অতীত অর্থ','نَفْيِ جَحْد بِلَمْ']];
+ const ngh=ng.map(x=>{const f=x[0]==='sawfa'?`<span class="ar form" tabindex="0" data-k="fu" data-s="1"><span class="pt">سَوْفَ</span> <span class="ad">يَ</span><span class="rt">كْتُبُ</span></span>`:render(x[0],1);
+   const m=x[0]==='sawfa'?meaning('fu',1):meaning(x[0],1);return `<div><span class="ar x">${f}</span>${x[3]?`<span class="ar lbl">${x[3]}</span>`:''}<small>${L(x[1],x[2])}</small>${L(m[0],m[1])}</div>`;}).join('');
+ const moods=slotTable([{h:TH('Pronoun','সর্বনাম')},{h:TH('Indicative','মারফূ’','مَرْفُوع'),cls:'pres'},{h:TH('After لَنْ','لَنْ-এর পরে','مَنْصُوب'),cls:'fut'},{h:TH('After لَمْ','لَمْ-এর পরে','مَجْزُوم'),cls:'past'}],
+  o=>`${prCell(o)}<td class="f">${render('mu',o.n)}</td><td class="f">${render('nasb',o.n)}</td><td class="f">${render('jazm',o.n)}</td>`);
+ const ex=[['كَتَبَ','يَكْتُبُ','3','َ'],['اِسْتَكْتَبَ','يَسْتَكْتِبُ','6','َ'],['أَكْرَمَ','يُكْرِمُ','4','ُ'],['عَلَّمَ','يُعَلِّمُ','4','ُ'],['كَاتَبَ','يُكَاتِبُ','4','ُ'],['دَحْرَجَ','يُدَحْرِجُ','4','ُ']];
+ return `<section class="lvl wide" id="present">${head('present','Branch B: the present-future (muḍāriʿ)','শাখা খ: মুযারে’ (বর্তমান ও ভবিষ্যৎ)','الْمُضَارِعُ: الْحَالُ وَالِاسْتِقْبَالُ','One imperfect conjugation, يَكْتُبُ, covers actions not yet complete. Context or a particle sets the time: present (ḥāl) or future (istiqbāl).','একটি গারদান يَكْتُبُ অসম্পন্ন কাজ বোঝায়। প্রসঙ্গ বা অব্যয় সময় নির্ধারণ করে: বর্তমান (হাল) বা ভবিষ্যৎ (ইস্তিকবাল)।')}
+ <div class="grid2">
+  <div class="panel c" style="--c:var(--pres)"><h3>${L('The four prefixes','চারটি চিহ্ন (হরফে আতীন)')}<span class="ar">أَنَيْتُ</span></h3>
+   <p>${LB('Every present form starts with one of four letters, remembered as أَنَيْتُ. The prefix tells the person.','প্রতিটি মুযারে’ চারটি অক্ষরের একটি দিয়ে শুরু হয়, মনে রাখার শব্দ أَنَيْتُ। চিহ্নটি পুরুষ বলে দেয়।')}</p>
+   <div class="prefixes">${pf}</div>
+   <p class="note">${L('تَ serves “she” and every “you”, so تَكْتُبُ is “she writes” or “you (m.) write”.','تَ “সে (নারী)” এবং সব “তুমি”-র জন্য, তাই تَكْتُبُ মানে “সে (নারী) লেখে” বা “তুমি লেখো”।')}</p></div>
+  <div class="panel c" style="--c:var(--pres)"><h3>${L('Prefix vowel: ya- or yu-?','চিহ্নের হরকত: যবর না পেশ?')}</h3>
+   <p>${LB('The prefix takes fatḥa in most verbs, but ḍamma when the past form has exactly four letters.','বেশিরভাগ ক্রিয়ায় চিহ্নে যবর হয়, কিন্তু মাযীতে ঠিক চারটি অক্ষর থাকলে পেশ হয়।')}</p>
+   <div class="tw"><table><thead><tr><th>${TH('Past','মাযী')}</th><th>${TH('Letters','অক্ষর')}</th><th>${TH('Present','মুযারে’')}</th></tr></thead><tbody>${ex.map(e=>`<tr><td><span class="ar">${e[0]}</span></td><td>${e[2]}</td><td><span class="ar">${e[1]}</span> ${e[3]==='ُ'?L('yu-','পেশ'):L('ya-','যবর')}</td></tr>`).join('')}</tbody></table></div></div>
+ </div>
+ <div class="panel mt c" style="--c:var(--fut)"><h3>${L('Time and negation','সময় ও নাবোধক')}</h3><div class="cards">${ngh}</div>
+  <p class="note">${L('سَـ joins the verb; سَوْفَ is a separate word, traditionally a more distant or emphatic future. لَمْ puts a present-looking verb into past meaning.','سَـ ক্রিয়ার সাথে যুক্ত; سَوْفَ আলাদা শব্দ, প্রচলিত মতে দূর বা জোরালো ভবিষ্যৎ। لَمْ মুযারে’ রূপকে অতীত অর্থ দেয়।')}</p></div>
+ <div class="panel mt"><h3>${L('How endings react to particles: the three moods','অব্যয়ের প্রভাবে শেষাংশ: তিন অবস্থা')}</h3>
+  <p class="note">${LB('After لَنْ (and أَنْ, كَيْ) the verb is manṣūb: final a. After لَمْ, لَمَّا, لَا of prohibition and lām of command it is majzūm: final sukūn. In the “five verbs” (يَكْتُبَانِ، تَكْتُبَانِ، يَكْتُبُونَ، تَكْتُبُونَ، تَكْتُبِينَ) the final nūn drops instead. The feminine-plural nūn never drops.','لَنْ (এবং أَنْ, كَيْ)-এর পরে ক্রিয়া মানসূব: শেষে যবর। لَمْ, لَمَّا, নিষেধের لَا ও আদেশের লামের পরে মাজযূম: শেষে সাকিন। “আফআলে খামসা”-তে (يَكْتُبَانِ، تَكْتُبَانِ، يَكْتُبُونَ، تَكْتُبُونَ، تَكْتُبِينَ) শেষের নূন পড়ে যায়। স্ত্রী বহুবচনের নূন কখনো পড়ে না।')}</p>
+  <div class="tw"><table>${moods}</table></div></div></section>`;}
+
+/* ================= 6. command & prohibition ================= */
+function secCommand(){
+ const direct=slotTable([{h:TH('Ṣīghah','সীগাহ')},{h:TH('Addressed to','যাকে বলা হচ্ছে')},{h:TH('You write','তুমি লেখো','الْمُضَارِع'),cls:'pres'},{h:TH('Command','আমর','الْأَمْر'),cls:'amr'},{h:TH('Prohibition','নাহী','النَّهْي'),cls:'nahy'},{h:TH('Meaning','অর্থ')}],
+  o=>`${nmCell(o)}<td class="pr"><span class="ar">${o.pr}</span> ${L(o.ep,o.bnTo)}</td><td class="f">${render('mu',o.n)}</td><td class="f">${render('amr',o.n)}</td><td class="f">${render('nahy',o.n)}</td><td class="mn">${L('Write! / Do not write!','লেখো! / লিখো না!')}</td>`,is2);
+ const full=slotTable([{h:TH('Pronoun','সর্বনাম')},{h:TH('Command','আমর','الْأَمْر'),cls:'amr'},{h:TH('Meaning','অর্থ')},{h:TH('Prohibition','নাহী','النَّهْي'),cls:'nahy'},{h:TH('Meaning','অর্থ')}],
+  o=>`${prCell(o)}<td class="f">${render('lamr',o.n)}</td><td class="mn">${mean('lamr',o.n)}</td><td class="f">${render('lnahy',o.n)}</td><td class="mn">${mean('lnahy',o.n)}</td>`);
+ const hz=[['نَصَرَ','يَنْصُرُ','اُنْصُرْ','u'],['ضَرَبَ','يَضْرِبُ','اِضْرِبْ','i'],['فَتَحَ','يَفْتَحُ','اِفْتَحْ','a'],['سَمِعَ','يَسْمَعُ','اِسْمَعْ','a'],['كَرُمَ','يَكْرُمُ','اُكْرُمْ','u'],['حَسِبَ','يَحْسِبُ','اِحْسِبْ','i'],['أَكْرَمَ','يُكْرِمُ','أَكْرِمْ','IV'],['عَلَّمَ','يُعَلِّمُ','عَلِّمْ','—'],['اِسْتَكْتَبَ','يَسْتَكْتِبُ','اِسْتَكْتِبْ','X']];
+ const hzNote={u:['middle u → اُ','মাঝে পেশ → اُ'],i:['middle i → اِ','মাঝে যের → اِ'],a:['middle a → اِ','মাঝে যবর → اِ'],IV:['own hamza أَ, always said','নিজস্ব হামযা أَ, সর্বদা উচ্চারিত'],'—':['starts with a vowel: no hamza','হরকত দিয়ে শুরু: হামযা লাগে না'],X:['helping اِ of the pattern','ওজনের সাহায্যকারী اِ']};
+ return `<section class="lvl wide" id="command">${head('command','Branches C and D: command and prohibition','শাখা গ ও ঘ: আমর ও নাহী','الْأَمْرُ وَالنَّهْيُ','A direct command speaks to the listener, so it has six forms, one for each “you”. Traditional books also give all 14 using لِـ and لَا.','সরাসরি আদেশ শ্রোতাকে করা হয়, তাই এর ছয়টি রূপ, প্রতিটি “তুমি”-র জন্য একটি। প্রচলিত কিতাবে لِـ ও لَا দিয়ে ১৪টি রূপই দেওয়া হয়।')}
+ <div class="grid2">
+  <div class="panel c" style="--c:var(--amr)"><h3>${L('Making the command','আমর গঠন')}<span class="ar">اُكْتُبْ</span></h3>
+   <div class="steps"><div class="st"><span class="ar"><span class="ad">تَ</span><span class="rt">كْتُبُ</span></span><small>1. ${L('you write','তুমি লেখো')}</small></div><span class="arrow">→</span>
+   <div class="st"><span class="ar"><span class="rt">كْتُبْ</span></span><small>2. ${L('drop تَ, end in sukūn','تَ বাদ, শেষে সাকিন')}</small></div><span class="arrow">→</span>
+   <div class="st"><span class="ar"><span class="ad">اُ</span><span class="rt">كْتُبْ</span></span><small>3. ${L('add helping hamza','সাহায্যকারী হামযা যোগ')}</small></div></div>
+   <p class="note">${LB('A word cannot begin with a silent letter, so hamzat al-waṣl is added. It is dropped in connected speech.','আরবি শব্দ সাকিন অক্ষর দিয়ে শুরু হতে পারে না, তাই হামযায়ে ওয়াসল যোগ হয়। মিলিয়ে পড়লে এটি উচ্চারিত হয় না।')}</p></div>
+  <div class="panel c" style="--c:var(--nahy)"><h3>${L('Making the prohibition','নাহী গঠন')}<span class="ar">لَا تَكْتُبْ</span></h3>
+   <div class="steps"><div class="st"><span class="ar"><span class="ad">تَ</span><span class="rt">كْتُبُ</span></span><small>1. ${L('you write','তুমি লেখো')}</small></div><span class="arrow">→</span>
+   <div class="st"><span class="ar"><span class="pt">لَا</span> <span class="ad">تَ</span><span class="rt">كْتُبْ</span></span><small>2. ${L('add لَا; verb becomes majzūm','لَا যোগ; ক্রিয়া মাজযূম')}</small></div></div>
+   <p class="note">${LB('Compare لَا تَكْتُبُ with final u: “you do not write”, a plain statement, not a prohibition.','তুলনা করুন لَا تَكْتُبُ (শেষে পেশ): “তুমি লেখো না” — সাধারণ বিবৃতি, নিষেধ নয়।')}</p></div>
+ </div>
+ <div class="panel mt"><h3>${L('Which vowel on the helping hamza?','সাহায্যকারী হামযায় কোন হরকত?')}</h3>
+  <p class="note">${LB('Look at the middle vowel of the present: ḍamma gives اُ; fatḥa or kasra gives اِ.','মুযারে’র মাঝের হরকত দেখুন: পেশ হলে اُ; যবর বা যের হলে اِ।')}</p>
+  <div class="tw"><table><thead><tr><th>${TH('Past','মাযী')}</th><th>${TH('Present','মুযারে’')}</th><th class="amr">${TH('Command','আমর')}</th><th>${TH('Why','কারণ')}</th></tr></thead><tbody>${hz.map(h=>`<tr><td><span class="ar">${h[0]}</span></td><td><span class="ar">${h[1]}</span></td><td><span class="ar">${h[2]}</span></td><td class="mn">${L(hzNote[h[3]][0],hzNote[h[3]][1])}</td></tr>`).join('')}</tbody></table></div></div>
+ <h3 class="mt">${L('The six direct forms','সরাসরি ছয় রূপ')}</h3>
+ <div class="tw mt"><table>${direct}</table></div>
+ <details class="panel mt" open><summary>${L('All 14 positions, the traditional way (with لِـ and لَا)','১৪ সীগাহর পূর্ণ রূপ, প্রচলিত পদ্ধতিতে (لِـ ও لَا দিয়ে)')}</summary>
+  <p class="note">${LB('For “he, they, I, we” Arabic uses lām al-amr: لِيَكْتُبْ “let him write”. After وَ or فَ the lām loses its vowel: فَلْيَكْتُبْ. Bangla has a matching form: সে লিখুক.','“সে, তারা, আমি, আমরা”-র জন্য আরবিতে লাম-এ আমর: لِيَكْتُبْ “সে লিখুক”। وَ বা فَ-এর পরে লাম সাকিন হয়: فَلْيَكْتُبْ। বাংলায় এর মতো রূপ আছে: সে লিখুক।')}</p>
+  <div class="tw"><table>${full}</table></div></details></section>`;}
+
+/* ================= 7. emphasis ================= */
+function secEmph(){
+ const t=slotTable([{h:TH('Pronoun','সর্বনাম')},{h:TH('Heavy nūn','ভারী নূন','نُون ثَقِيلَة'),cls:'emph'},{h:TH('Light nūn','হালকা নূন','نُون خَفِيفَة'),cls:'emph'},{h:TH('Meaning','অর্থ')}],
+  o=>`${prCell(o)}<td class="f">${render('tawk',o.n)}</td><td class="f">${render('tawkL',o.n)}</td><td class="mn">${mean('tawk',o.n)}</td>`);
+ const t2=slotTable([{h:TH('Addressed to','যাকে বলা হচ্ছে')},{h:TH('Emphatic command','তাকীদযুক্ত আমর'),cls:'amr'},{h:TH('Emphatic prohibition','তাকীদযুক্ত নাহী'),cls:'nahy'}],
+  o=>`<td class="pr"><span class="ar">${o.pr}</span> ${L(o.ep,o.bnTo)}</td><td class="f">${render('amrH',o.n)}</td><td class="f">${render('nahyH',o.n)}</td>`,is2);
+ return `<section class="lvl wide" id="emphasis">${head('emphasis','Emphasis: the nūn of tawkīd','তাকীদ: জোর প্রকাশক নূন','نُونُ التَّأْكِيدِ','To say “he will surely write”, Arabic adds the lām of oath in front and a nūn of emphasis at the end. The heavy nūn is نَّ; the light nūn is نْ.','“সে অবশ্যই লিখবে” বলতে আরবিতে সামনে শপথের লাম এবং শেষে জোর প্রকাশক নূন যোগ হয়। ভারী নূন نَّ, হালকা নূন نْ।')}
+ <div class="grid3">
+  <div class="panel c" style="--c:var(--emph)"><h3>${L('Rule 1','নিয়ম ১')}</h3><p>${LB('Singular forms end in fatḥa before the nūn: يَكْتُبَنَّ.','একবচনে নূনের আগে যবর: يَكْتُبَنَّ।')}</p></div>
+  <div class="panel c" style="--c:var(--emph)"><h3>${L('Rule 2','নিয়ম ২')}</h3><p>${LB('Masculine plural keeps ḍamma, the “you” (f.) keeps kasra; their nūn and wāw / yāʾ drop: يَكْتُبُنَّ، تَكْتُبِنَّ.','পুং বহুবচনে পেশ, “তুমি (নারী)”-তে যের থাকে; তাদের নূন ও ওয়াও/ইয়া পড়ে যায়: يَكْتُبُنَّ، تَكْتُبِنَّ।')}</p></div>
+  <div class="panel c" style="--c:var(--emph)"><h3>${L('Rule 3','নিয়ম ৩')}</h3><p>${LB('Duals take نِّ after alif; feminine plural adds an alif: يَكْتُبْنَانِّ. The light nūn never joins duals or feminine plurals.','দ্বিবচনে আলিফের পরে نِّ; স্ত্রী বহুবচনে আলিফ যোগ হয়: يَكْتُبْنَانِّ। হালকা নূন দ্বিবচন ও স্ত্রী বহুবচনে আসে না।')}</p></div>
+ </div>
+ <div class="tw mt"><table>${t}</table></div>
+ <h3 class="mt">${L('Command and prohibition with the heavy nūn','ভারী নূনসহ আমর ও নাহী')}</h3>
+ <div class="tw mt"><table>${t2}</table></div>
+ <p class="note">${L('In the past, emphasis uses لَقَدْ: لَقَدْ كَتَبَ “he has certainly written”.','অতীতে জোরের জন্য لَقَدْ: لَقَدْ كَتَبَ “সে অবশ্যই লিখেছে”।')}</p></section>`;}
+
+/* ================= 8. passive ================= */
+function secPassive(){
+ const t=slotTable([{h:TH('Pronoun','সর্বনাম')},{h:TH('Past active','মাযী মা’লূম'),cls:'past'},{h:TH('Past passive','মাযী মাজহূল'),cls:'pass'},{h:TH('Present active','মুযারে’ মা’লূম'),cls:'pres'},{h:TH('Present passive','মুযারে’ মাজহূল'),cls:'pass'}],
+  o=>`${prCell(o)}<td class="f">${render('md',o.n)}</td><td class="f">${render('pmd',o.n)}</td><td class="f">${render('mu',o.n)}</td><td class="f">${render('pmu',o.n)}</td>`);
+ const more=[['سَيُكْتَبُ','It will be written','লেখা হবে'],['لَمْ يُكْتَبْ','It was not written','লেখা হয়নি'],['لَنْ يُكْتَبَ','It will not be written','লেখা হবে না'],['قَدْ كُتِبَ','It has been written','লেখা হয়েছে'],['لِيُكْتَبْ','Let it be written','লেখা হোক'],['لَا يُكْتَبُ','It is not written','লেখা হয় না']];
+ return `<section class="lvl wide" id="passive">${head('passive','Active and passive','মা’লূম ও মাজহূল (কর্তৃবাচ্য ও কর্মবাচ্য)','الْمَعْلُومُ وَالْمَجْهُولُ','In the passive the doer is not named. Arabic changes only the vowels; English and Bangla need a helper word (“was”, “হলো”).','কর্মবাচ্যে কর্তার নাম থাকে না। আরবিতে শুধু হরকত বদলায়; ইংরেজি ও বাংলায় সহায়ক শব্দ লাগে (“was”, “হলো”)।')}
+ <div class="grid3">
+  <div class="panel c dnoun" style="--c:var(--pass)"><span class="ar big">${render('pmd',1)}</span>${L('It was written.','তা লেখা হলো।')}<p class="note">${L('Past: u on the first letter, i before the last (fuʿila).','মাযী: প্রথম অক্ষরে পেশ, শেষের আগেরটিতে যের (ফুইলা)।')}</p></div>
+  <div class="panel c dnoun" style="--c:var(--pass)"><span class="ar big">${render('pmu',1)}</span>${L('It is (being) written.','তা লেখা হয় / হচ্ছে।')}<p class="note">${L('Present: u on the prefix, a before the last (yufʿalu).','মুযারে’: চিহ্নে পেশ, শেষের আগেরটিতে যবর (ইউফআলু)।')}</p></div>
+  <div class="panel c" style="--c:var(--pass)"><h3>${L('In a sentence','বাক্যে')}</h3><p><span class="ar ai">كَتَبَ الطَّالِبُ الدَّرْسَ</span><br>${L('The student wrote the lesson.','ছাত্রটি পাঠ লিখল।')}</p><p><span class="ar ai">كُتِبَ الدَّرْسُ</span><br>${L('The lesson was written.','পাঠটি লেখা হলো।')}</p><p class="note">${L('The object becomes the subject (nāʾib al-fāʿil) and takes ḍamma.','কর্ম কর্তার স্থলাভিষিক্ত (নায়েবে ফায়েল) হয়ে পেশ পায়।')}</p></div>
+ </div>
+ <div class="cards">${more.map(m=>`<div><span class="ar x">${m[0]}</span>${L(m[1],m[2])}</div>`).join('')}</div>
+ <details class="panel mt"><summary>${L('All 14 positions, active beside passive','১৪ সীগাহ: মা’লূম ও মাজহূল পাশাপাশি')}</summary><div class="tw mt"><table>${t}</table></div>
+ <p class="note">${L('With كَتَبَ the third-person forms are by far the most used. Intransitive verbs (lāzim) have no normal passive.','كَتَبَ-এর ক্ষেত্রে নাম পুরুষের রূপই সবচেয়ে বেশি ব্যবহৃত। অকর্মক (লাযিম) ক্রিয়ার স্বাভাবিক কর্মবাচ্য হয় না।')}</p></details></section>`;}
+/* ================= 9. derived nouns ================= */
+function decl(rows){return `<div class="tw"><table><thead><tr><th></th><th>${TH('Singular','একবচন')}</th><th>${TH('Dual','দ্বিবচন')}</th><th>${TH('Plural','বহুবচন')}</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${L(r[0],r[1])}</td>${r.slice(2).map(x=>`<td><span class="ar">${x}</span></td>`).join('')}</tr>`).join('')}</tbody></table></div>`;}
+function secNouns(){
+ const nc=(ar,en,bn,pat,ex,men,mbn,pen,pbn)=>`<div class="nc"><h4>${L(en,bn)}<span class="ar">${ar}</span></h4><div class="pat">${L('Pattern','ওজন')}: <span class="ar">${pat}</span></div><span class="ar ex">${ex}</span><div style="text-align:center">${L(men,mbn)}</div><p class="note">${LB(pen,pbn)}</p></div>`;
+ return `<section class="lvl wide" id="nouns">${head('nouns','Nouns built from the root','মূল থেকে গঠিত বিশেষ্য (মুশতাক্কাত)','الْمَصْدَرُ وَالْمُشْتَقَّاتُ','Ṣarf also builds nouns and adjectives from the same three letters. Each has a fixed pattern you can apply to other roots.','সরফ একই তিন অক্ষর থেকে বিশেষ্য ও বিশেষণও গঠন করে। প্রতিটির নির্দিষ্ট ওজন আছে, যা অন্য মূলেও প্রয়োগ করা যায়।')}
+ <div class="ncards">
+  ${nc('الْمَصْدَر','Verbal noun','মাসদার (ক্রিয়াবিশেষ্য)','—','كِتَابَةٌ','writing (the act)','লেখা (কাজটি)','Basic-verb maṣdars must be learned: كِتَابَةٌ and كَتْبٌ. Added-letter forms have fixed maṣdars.','মূল ক্রিয়ার মাসদার মুখস্থ করতে হয়: كِتَابَةٌ ও كَتْبٌ। মাযীদ ফীহের মাসদার নির্দিষ্ট।')}
+  ${nc('اِسْمُ الْفَاعِل','Active participle','ইসমে ফায়েল (কর্তাবাচক)','فَاعِل','كَاتِبٌ','writer, one who writes','লেখক, যে লেখে','For all added-letter verbs: مُـ + present stem with i: مُكَاتِبٌ.','মাযীদ ফীহে: مُـ + মুযারে’র মূলাংশ, শেষের আগে যের: مُكَاتِبٌ।')}
+  ${nc('اِسْمُ الْمَفْعُول','Passive participle','ইসমে মাফউল (কর্মবাচক)','مَفْعُول','مَكْتُوبٌ','written; a letter','লিখিত; চিঠি','For added-letter verbs: same as the active participle but with a: مُكَاتَبٌ.','মাযীদ ফীহে: ইসমে ফায়েলের মতো, তবে যবর: مُكَاتَبٌ।')}
+  ${nc('اِسْمُ الظَّرْف','Noun of place / time','ইসমে যরফ (স্থান/কাল)','مَفْعَل / مَفْعِل','مَكْتَبٌ','office, place of writing','অফিস, লেখার স্থান','Present middle u or a → مَفْعَل (مَكْتَبٌ); middle i → مَفْعِل (مَجْلِسٌ from يَجْلِسُ).','মুযারে’র মাঝে পেশ বা যবর → مَفْعَل (مَكْتَبٌ); যের → مَفْعِل (يَجْلِسُ থেকে مَجْلِسٌ)।')}
+  ${nc('اِسْمُ الْآلَة','Noun of instrument','ইসমে আলা (যন্ত্রবাচক)','مِفْعَل، مِفْعَلَة، مِفْعَال','مِفْتَاحٌ','key (from فَتَحَ)','চাবি (فَتَحَ থেকে)','Common examples: مِبْرَدٌ file, مِكْنَسَةٌ broom, مِفْتَاحٌ key. From ك ت ب the drill gives مِكْتَبٌ، مِكْتَبَةٌ، مِكْتَابٌ.','প্রচলিত উদাহরণ: مِبْرَدٌ উকা, مِكْنَسَةٌ ঝাড়ু, مِفْتَاحٌ চাবি। ك ت ب থেকে গারদানে আসে: مِكْتَبٌ، مِكْتَبَةٌ، مِكْتَابٌ।')}
+  ${nc('اِسْمُ التَّفْضِيل','Comparative / superlative','ইসমে তাফযীল (তুলনাবাচক)','أَفْعَلُ / فُعْلَى','أَكْتَبُ','a better (the best) writer','অধিক (সবচেয়ে) ভালো লেখক','Like أَكْبَرُ “bigger”, feminine كُبْرَى. أَكْتَبُ مِنْ زَيْدٍ “a better writer than Zayd”.','যেমন أَكْبَرُ “বড়”, স্ত্রীলিঙ্গ كُبْرَى। أَكْتَبُ مِنْ زَيْدٍ “যায়দের চেয়ে ভালো লেখক”।')}
+  ${nc('صِيغَةُ الْمُبَالَغَة','Intensive forms','মুবালাগার সীগাহ (আধিক্যবাচক)','فَعَّال، فَعُول، فَعِيل، مِفْعَال، فَعِل','غَفَّارٌ','the Much-Forgiving','অতিশয় ক্ষমাশীল','More examples: صَبُورٌ very patient, عَلِيمٌ all-knowing, مِقْدَامٌ very bold, حَذِرٌ very cautious.','আরও উদাহরণ: صَبُورٌ অতি ধৈর্যশীল, عَلِيمٌ সর্বজ্ঞ, مِقْدَامٌ অতি সাহসী, حَذِرٌ অতি সতর্ক।')}
+  ${nc('الصِّفَةُ الْمُشَبَّهَة','Quality adjective','সিফাতে মুশাব্বাহা (স্থায়ী গুণ)','فَعِيل، فَعَل، فَعْل، أَفْعَل، فَعْلَان','كَرِيمٌ','noble, generous (from كَرُمَ)','সম্মানিত, দানশীল (كَرُمَ থেকে)','For lasting qualities, mostly from intransitive verbs: حَسَنٌ good, صَعْبٌ hard, أَحْمَرُ red, عَطْشَانُ thirsty.','স্থায়ী গুণের জন্য, সাধারণত অকর্মক ক্রিয়া থেকে: حَسَنٌ সুন্দর, صَعْبٌ কঠিন, أَحْمَرُ লাল, عَطْشَانُ পিপাসার্ত।')}
+  ${nc('فِعْلُ التَّعَجُّب','Verbs of wonder','ফে’লে তাআজ্জুব (বিস্ময়সূচক)','مَا أَفْعَلَهُ / أَفْعِلْ بِهِ','مَا أَكْتَبَهُ!','How well he writes!','সে কত চমৎকার লেখে!','Two fixed patterns; the second is أَكْتِبْ بِهِ! with the same meaning.','দুটি নির্দিষ্ট ওজন; দ্বিতীয়টি أَكْتِبْ بِهِ!, একই অর্থ।')}
+ </div>
+ <div class="grid2 mt">
+  <div class="panel c" style="--c:var(--der)"><h3>${L('Active participle: all forms','ইসমে ফায়েল: সব রূপ')}</h3>${decl([['Masculine','পুংলিঙ্গ','كَاتِبٌ','كَاتِبَانِ','كَاتِبُونَ'],['Feminine','স্ত্রীলিঙ্গ','كَاتِبَةٌ','كَاتِبَتَانِ','كَاتِبَاتٌ']])}<p class="note">${L('Broken plurals are also used: كُتَّابٌ، كَتَبَةٌ “writers, scribes”.','ভগ্ন বহুবচনও ব্যবহৃত: كُتَّابٌ، كَتَبَةٌ “লেখকগণ, লিপিকারগণ”।')}</p></div>
+  <div class="panel c" style="--c:var(--der)"><h3>${L('Passive participle: all forms','ইসমে মাফউল: সব রূপ')}</h3>${decl([['Masculine','পুংলিঙ্গ','مَكْتُوبٌ','مَكْتُوبَانِ','مَكْتُوبُونَ'],['Feminine','স্ত্রীলিঙ্গ','مَكْتُوبَةٌ','مَكْتُوبَتَانِ','مَكْتُوبَاتٌ']])}<p class="note">${L('As a noun “letter”, the plural is مَكَاتِيبُ.','বিশেষ্য “চিঠি” অর্থে বহুবচন مَكَاتِيبُ।')}</p></div>
+ </div>
+ <div class="panel mt"><h3>${L('Kinds of maṣdar','মাসদারের প্রকার')}</h3>
+  <div class="cards">
+   <div><span class="ar x">كِتَابَةٌ</span><span class="ar lbl">مَصْدَر أَصْلِي</span>${L('basic: writing','মূল মাসদার: লেখা')}</div>
+   <div><span class="ar x">مَكْتَبٌ</span><span class="ar lbl">مَصْدَر مِيمِي</span>${L('with مَـ: the act of writing','মীমযুক্ত: লেখার কাজ')}</div>
+   <div><span class="ar x">كَتْبَةٌ</span><span class="ar lbl">اِسْمُ الْمَرَّة</span>${L('one time: a single act of writing','একবার: একবার লেখা')}</div>
+   <div><span class="ar x">كِتْبَةٌ</span><span class="ar lbl">اِسْمُ الْهَيْئَة</span>${L('manner: a way of writing','ধরন: লেখার ধরন')}</div>
+  </div></div></section>`;}
+
+/* ================= 10. ṣarf ṣaghīr ================= */
+function secSaghir(){
+ const R=[['كَتَبَ يَكْتُبُ كِتَابَةً فَهُوَ كَاتِبٌ','He wrote, he writes, writing; so he is a writer.','সে লিখল, সে লেখে, লেখা; অতএব সে লেখক।'],
+  ['وَكُتِبَ يُكْتَبُ كِتَابَةً فَهُوَ مَكْتُوبٌ','It was written, it is written, writing; so it is written.','তা লেখা হলো, লেখা হয়, লেখা; অতএব তা লিখিত।'],
+  ['الْأَمْرُ مِنْهُ اُكْتُبْ','Its command: Write!','এর আমর: লেখো!'],
+  ['وَالنَّهْيُ عَنْهُ لَا تَكْتُبْ','Its prohibition: Do not write!','এর নাহী: লিখো না!'],
+  ['الظَّرْفُ مِنْهُ مَكْتَبٌ','Its noun of place and time: a place of writing.','এর ইসমে যরফ: লেখার স্থান বা সময়।'],
+  ['وَالْآلَةُ مِنْهُ مِكْتَبٌ وَمِكْتَبَةٌ وَمِكْتَابٌ','Its nouns of instrument, in three patterns: a tool for writing.','এর ইসমে আলা, তিন ওজনে: লেখার উপকরণ।'],
+  ['وَتَثْنِيَتُهُمَا مَكْتَبَانِ وَمِكْتَبَانِ وَمِكْتَبَتَانِ وَمِكْتَابَانِ','Their duals.','এগুলোর দ্বিবচন।'],
+  ['وَالْجَمْعُ مِنْهُمَا مَكَاتِبُ وَمَكَاتِيبُ','Their plurals.','এগুলোর বহুবচন।'],
+  ['وَأَفْعَلُ التَّفْضِيلِ مِنْهُ أَكْتَبُ','Its comparative: a better writer.','এর ইসমে তাফযীল: অধিক ভালো লেখক।'],
+  ['وَالْمُؤَنَّثُ مِنْهُ كُتْبَى','Its feminine.','এর স্ত্রীলিঙ্গ।'],
+  ['وَتَثْنِيَتُهُمَا أَكْتَبَانِ وَكُتْبَيَانِ','Their duals.','এগুলোর দ্বিবচন।'],
+  ['وَالْجَمْعُ مِنْهُمَا أَكْتَبُونَ وَأَكَاتِبُ وَكُتَبٌ وَكُتْبَيَاتٌ','Their plurals.','এগুলোর বহুবচন।'],
+  ['وَفِعْلُ التَّعَجُّبِ مِنْهُ مَا أَكْتَبَهُ وَأَكْتِبْ بِهِ','Its verbs of wonder: How well he writes!','এর ফে’লে তাআজ্জুব: সে কত চমৎকার লেখে!']];
+ return `<section class="lvl" id="saghir">${head('saghir','Ṣarf ṣaghīr: the whole family in one breath','সরফে সগীর: এক নিঃশ্বাসে পুরো পরিবার','الصَّرْفُ الصَّغِيرُ','Madrasa students recite this for every new verb. Once you can recite it, you know the key forms of the root.','মাদরাসার ছাত্ররা প্রতিটি নতুন ক্রিয়ার জন্য এটি আবৃত্তি করে। এটি পারলে মূলটির প্রধান রূপগুলো জানা হয়ে যায়।')}
+ <div class="panel recite">${R.map(r=>`<div class="rline"><span class="ar">${r[0]}</span><span class="tx">${L(r[1],r[2])}</span></div>`).join('')}</div>
+ <p class="note mt">${LB('This is a training drill. Some forms it produces (مِكْتَبٌ, مِكْتَابٌ, كُتْبَى) are pattern practice, not everyday words. The real word for “library” is مَكْتَبَةٌ. Ṣarf kabīr is the full 14-form tables you saw above.','এটি অনুশীলনের গারদান। এতে আসা কিছু রূপ (مِكْتَبٌ, مِكْتَابٌ, كُتْبَى) ওজনের অনুশীলন, দৈনন্দিন শব্দ নয়। “গ্রন্থাগার”-এর প্রকৃত শব্দ مَكْتَبَةٌ। সরফে কাবীর হলো ওপরের পূর্ণ ১৪ সীগাহর ছক।')}</p></section>`;}
+
+/* ================= 11. six abwab ================= */
+const BAB=[
+ ['نَصَرَ','to help','সাহায্য করা',['نَ','صَ','رَ'],['يَنْ','صُ','رُ'],['فَ','عَ','لَ'],['يَفْ','عُ','لُ'],'a','u','نَصْرًا','اُنْصُرْ',true,'Most common family. كَتَبَ يَكْتُبُ belongs here.','সবচেয়ে প্রচলিত বাব। كَتَبَ يَكْتُبُ এই বাবের।'],
+ ['ضَرَبَ','to strike','মারা',['ضَ','رَ','بَ'],['يَضْ','رِ','بُ'],['فَ','عَ','لَ'],['يَفْ','عِ','لُ'],'a','i','ضَرْبًا','اِضْرِبْ',false,'Very common too: جَلَسَ يَجْلِسُ to sit.','এটিও খুব প্রচলিত: جَلَسَ يَجْلِسُ বসা।'],
+ ['فَتَحَ','to open','খোলা',['فَ','تَ','حَ'],['يَفْ','تَ','حُ'],['فَ','عَ','لَ'],['يَفْ','عَ','لُ'],'a','a','فَتْحًا','اِفْتَحْ',false,'Usually has a throat letter (ء ه ع ح غ خ) as the middle or last root letter.','সাধারণত মাঝে বা শেষে কণ্ঠ্য অক্ষর (ء ه ع ح غ خ) থাকে।'],
+ ['سَمِعَ','to hear','শোনা',['سَ','مِ','عَ'],['يَسْ','مَ','عُ'],['فَ','عِ','لَ'],['يَفْ','عَ','لُ'],'i','a','سَمْعًا','اِسْمَعْ',false,'Common for states and feelings: فَرِحَ يَفْرَحُ to be glad.','অবস্থা ও অনুভূতির জন্য প্রচলিত: فَرِحَ يَفْرَحُ খুশি হওয়া।'],
+ ['كَرُمَ','to be noble','সম্মানিত হওয়া',['كَ','رُ','مَ'],['يَكْ','رُ','مُ'],['فَ','عُ','لَ'],['يَفْ','عُ','لُ'],'u','u','كَرَامَةً','اُكْرُمْ',false,'Lasting qualities; never takes an object, so it has no passive.','স্থায়ী গুণ; কখনো কর্ম নেয় না, তাই কর্মবাচ্য নেই।'],
+ ['حَسِبَ','to think','মনে করা',['حَ','سِ','بَ'],['يَحْ','سِ','بُ'],['فَ','عِ','لَ'],['يَفْ','عِ','لُ'],'i','i','حِسْبَانًا','اِحْسِبْ',false,'The rarest family, e.g. وَرِثَ يَرِثُ to inherit.','সবচেয়ে বিরল বাব, যেমন وَرِثَ يَرِثُ উত্তরাধিকারী হওয়া।']];
+function secAbwab(){
+ const seg=(a,b,c)=>`${a}<span class="ayn">${b}</span>${c}`;
+ const R=[['ثُلَاثِيّ مُجَرَّد','Basic three-letter','মূল তিন অক্ষর','كَتَبَ','3','3'],['ثُلَاثِيّ مَزِيد فِيه','Three-letter with additions','তিন অক্ষর + অতিরিক্ত','أَكْرَمَ','3','4'],['ثُلَاثِيّ مَزِيد فِيه','Three-letter with additions','তিন অক্ষর + অতিরিক্ত','اِنْكَسَرَ','3','5 (khumāsī)'],['ثُلَاثِيّ مَزِيد فِيه','Three-letter with additions','তিন অক্ষর + অতিরিক্ত','اِسْتَخْرَجَ','3','6 (sudāsī)'],['رُبَاعِيّ مُجَرَّد','Basic four-letter','মূল চার অক্ষর','دَحْرَجَ','4','4'],['رُبَاعِيّ مَزِيد فِيه','Four-letter with additions','চার অক্ষর + অতিরিক্ত','تَدَحْرَجَ','4','5 (khumāsī)'],['رُبَاعِيّ مَزِيد فِيه','Four-letter with additions','চার অক্ষর + অতিরিক্ত','اِحْرَنْجَمَ','4','6 (sudāsī)']];
+ return `<section class="lvl wide" id="abwab">${head('abwab','The six abwāb of basic three-letter verbs','সুলাসী মুজাররাদের ছয় বাব','أَبْوَابُ الثُّلَاثِيِّ الْمُجَرَّدِ','Basic verbs fall into six families (bāb, “door”). The vowel on the middle root letter in the past and the present decides the family; it is shown in colour.','মূল ক্রিয়াগুলো ছয়টি বাবে (“দরজা”) বিভক্ত। মাযী ও মুযারে’তে মাঝের অক্ষরের (আইন কালিমা) হরকতই বাব নির্ধারণ করে; রঙে দেখানো হয়েছে।')}
+ <div class="abwab">${BAB.map((b,i)=>`<div class="bab${b[11]?' home':''}">${b[11]?`<span class="badge">${L('كَتَبَ is here','كَتَبَ এখানে')}</span>`:''}
+  <div class="bn2"><span class="ar">بَابُ ${b[0]}</span><small>${i+1}. ${L(b[1],b[2])}</small></div>
+  <div class="pat"><span class="ar">${seg(...b[3])} ${seg(...b[4])}</span></div>
+  <div class="pat"><span class="ar" style="font-size:21px;color:var(--muted)">${seg(...b[5])} ${seg(...b[6])}</span></div>
+  <div class="vow">${L('middle vowel','মাঝের হরকত')}: <span>${L('past','মাযী')} ${b[7]}</span><span>${L('present','মুযারে’')} ${b[8]}</span></div>
+  <div class="more"><span>${L('maṣdar','মাসদার')} <span class="ar">${b[9]}</span></span><span>${L('command','আমর')} <span class="ar">${b[10]}</span></span></div>
+  <p class="note">${LB(b[12],b[13])}</p></div>`).join('')}</div>
+ <div class="tip">${LB('How to find the bāb: the past alone usually is not enough, so learn every verb as a pair (كَتَبَ يَكْتُبُ). Two shortcuts: a past with u in the middle is always Bāb Karuma; a past with a and a throat letter is often Bāb Fataḥa.','বাব চেনার উপায়: শুধু মাযী দেখে সাধারণত বোঝা যায় না, তাই প্রতিটি ক্রিয়া জোড়ায় মুখস্থ করুন (كَتَبَ يَكْتُبُ)। দুটি সহজ সূত্র: মাযীর মাঝে পেশ হলে সবসময় বাবে কারুমা; মাঝে যবর ও কণ্ঠ্য অক্ষর থাকলে প্রায়ই বাবে ফাতাহা।')}</div>
+ <div class="warn">${LB('Two different sixes. The six abwāb sort verbs by vowel pattern. The six kinds of past (chapter 4) sort meanings made with particles. They are unrelated.','দুটি আলাদা “ছয়”। ছয় বাব ক্রিয়াকে হরকতের ধরন অনুযায়ী ভাগ করে। মাযীর ছয় প্রকার (অধ্যায় ৪) অব্যয় দিয়ে তৈরি অর্থ ভাগ করে। দুটির মধ্যে কোনো সম্পর্ক নেই।')}</div>
+ <div class="panel mt"><h3>${L('Root letters versus written letters','মূল অক্ষর বনাম লিখিত অক্ষর')}</h3>
+  <p class="note">${LB('Verb roots have three or four letters. Khumāsī (five) and sudāsī (six) count the letters of the written verb after additions, not the root.','ক্রিয়ার মূল তিন বা চার অক্ষরের। খুমাসী (পাঁচ) ও সুদাসী (ছয়) মূল নয়, বরং অতিরিক্তসহ লিখিত ক্রিয়ার অক্ষর গণনা করে।')}</p>
+  <div class="tw"><table><thead><tr><th>${TH('Type','প্রকার')}</th><th>${TH('Example','উদাহরণ')}</th><th>${TH('Root letters','মূল অক্ষর')}</th><th>${TH('Letters written','লিখিত অক্ষর')}</th></tr></thead><tbody>${R.map(r=>`<tr><td><span class="ar" style="font-size:18px">${r[0]}</span> ${L(r[1],r[2])}</td><td><span class="ar">${r[3]}</span></td><td>${r[4]}</td><td>${r[5]}</td></tr>`).join('')}</tbody></table></div></div></section>`;}
+
+/* ================= 12. mazid ================= */
+const MZ=[
+ ['IV','بَابُ الْإِفْعَال','أَفْعَلَ يُفْعِلُ',['أَكْرَمَ','يُكْرِمُ','إِكْرَامًا','مُكْرِمٌ','مُكْرَمٌ','أَكْرِمْ'],'أَكْتَبَ','to have someone write, dictate','কাউকে দিয়ে লেখানো','Causes the action: جَلَسَ sat → أَجْلَسَ seated.','কাজ করানো: جَلَسَ বসল → أَجْلَسَ বসাল।',{p:'أَكْتَب',s:'كْتِب',v:'ُ'}],
+ ['II','بَابُ التَّفْعِيل','فَعَّلَ يُفَعِّلُ',['عَلَّمَ','يُعَلِّمُ','تَعْلِيمًا','مُعَلِّمٌ','مُعَلَّمٌ','عَلِّمْ'],'كَتَّبَ','to teach someone to write','কাউকে লেখা শেখানো','Intensity or causing: عَلِمَ knew → عَلَّمَ taught; كَسَرَ broke → كَسَّرَ smashed.','তীব্রতা বা করানো: عَلِمَ জানল → عَلَّمَ শেখাল; كَسَرَ ভাঙল → كَسَّرَ চুরমার করল।',{p:'كَتَّب',s:'كَتِّب',v:'ُ'}],
+ ['III','بَابُ الْمُفَاعَلَة','فَاعَلَ يُفَاعِلُ',['كَاتَبَ','يُكَاتِبُ','مُكَاتَبَةً','مُكَاتِبٌ','مُكَاتَبٌ','كَاتِبْ'],'كَاتَبَ','to write to someone, correspond','কারো সাথে চিঠি আদান-প্রদান করা','Doing it with or to another person: قَاتَلَ fought with.','অন্যের সাথে বা প্রতি কাজ করা: قَاتَلَ যুদ্ধ করল।',{p:'كَاتَب',s:'كَاتِب',v:'ُ'}],
+ ['V','بَابُ التَّفَعُّل','تَفَعَّلَ يَتَفَعَّلُ',['تَعَلَّمَ','يَتَعَلَّمُ','تَعَلُّمًا','مُتَعَلِّمٌ','مُتَعَلَّمٌ','تَعَلَّمْ'],'','','','Receiving the action of Form II, or effort: عَلَّمَ taught → تَعَلَّمَ learned.','দ্বিতীয় রূপের প্রভাব গ্রহণ বা চেষ্টা: عَلَّمَ শেখাল → تَعَلَّمَ শিখল।',null],
+ ['VI','بَابُ التَّفَاعُل','تَفَاعَلَ يَتَفَاعَلُ',['تَكَاتَبَ','يَتَكَاتَبُ','تَكَاتُبًا','مُتَكَاتِبٌ','—','تَكَاتَبْ'],'تَكَاتَبَ','to write to each other','পরস্পরকে চিঠি লেখা','Mutual action, or pretending: تَعَاوَنَ cooperated; تَمَارَضَ pretended to be ill.','পারস্পরিক কাজ বা ভান: تَعَاوَنَ সহযোগিতা করল; تَمَارَضَ অসুস্থতার ভান করল।',{p:'تَكَاتَب',s:'تَكَاتَب',v:'َ'}],
+ ['VII','بَابُ الِانْفِعَال','اِنْفَعَلَ يَنْفَعِلُ',['اِنْكَسَرَ','يَنْكَسِرُ','اِنْكِسَارًا','مُنْكَسِرٌ','—','اِنْكَسِرْ'],'','','','Accepting the action, always intransitive: كَسَرَ broke it → اِنْكَسَرَ got broken.','প্রভাব গ্রহণ, সর্বদা অকর্মক: كَسَرَ ভাঙল → اِنْكَسَرَ ভেঙে গেল।',null],
+ ['VIII','بَابُ الِافْتِعَال','اِفْتَعَلَ يَفْتَعِلُ',['اِكْتَتَبَ','يَكْتَتِبُ','اِكْتِتَابًا','مُكْتَتِبٌ','مُكْتَتَبٌ','اِكْتَتِبْ'],'اِكْتَتَبَ','to subscribe, register; to copy out','চাঁদা দেওয়া, নাম লেখানো; লিখে নেওয়া','Doing for oneself or accepting: جَمَعَ gathered → اِجْتَمَعَ assembled.','নিজের জন্য করা বা প্রভাব গ্রহণ: جَمَعَ জড়ো করল → اِجْتَمَعَ একত্র হলো।',{p:'اِكْتَتَب',s:'كْتَتِب',v:'َ'}],
+ ['IX','بَابُ الِافْعِلَال','اِفْعَلَّ يَفْعَلُّ',['اِحْمَرَّ','يَحْمَرُّ','اِحْمِرَارًا','مُحْمَرٌّ','—','اِحْمَرَّ'],'','','','Colours and bodily defects: اِحْمَرَّ turned red, اِعْوَجَّ became crooked.','রং ও শারীরিক ত্রুটি: اِحْمَرَّ লাল হলো, اِعْوَجَّ বাঁকা হলো।',null],
+ ['X','بَابُ الِاسْتِفْعَال','اِسْتَفْعَلَ يَسْتَفْعِلُ',['اِسْتَكْتَبَ','يَسْتَكْتِبُ','اِسْتِكْتَابًا','مُسْتَكْتِبٌ','مُسْتَكْتَبٌ','اِسْتَكْتِبْ'],'اِسْتَكْتَبَ','to ask someone to write','কাউকে লিখতে অনুরোধ করা','Asking or seeking: غَفَرَ forgave → اِسْتَغْفَرَ asked forgiveness.','চাওয়া বা প্রার্থনা: غَفَرَ ক্ষমা করল → اِسْتَغْفَرَ ক্ষমা চাইল।',{p:'اِسْتَكْتَب',s:'سْتَكْتِب',v:'َ'}]];
+const RB=[['بَابُ فَعْلَلَة','دَحْرَجَ يُدَحْرِجُ دَحْرَجَةً','to roll (something)','গড়িয়ে দেওয়া'],['بَابُ تَفَعْلُل','تَدَحْرَجَ يَتَدَحْرَجُ تَدَحْرُجًا','to roll (itself)','নিজে গড়িয়ে যাওয়া'],['بَابُ اِفْعِنْلَال','اِحْرَنْجَمَ يَحْرَنْجِمُ اِحْرِنْجَامًا','to crowd together','ভিড় করা'],['بَابُ اِفْعِلَّال','اِقْشَعَرَّ يَقْشَعِرُّ اِقْشِعْرَارًا','to shiver','শিউরে ওঠা']];
+function secMazid(){
+ const rows=MZ.map((m,i)=>`<tr data-mz="${i}"><td class="fm">${m[0]}</td><td><span class="ar" style="font-size:17px">${m[1]}</span><br><span class="ar">${m[2]}</span></td>${m[3].map(x=>`<td><span class="ar">${x}</span></td>`).join('')}<td>${m[4]?`<span class="ar">${m[4]}</span><br>${L(m[5],m[6])}`:'<span class="note">—</span>'}</td><td class="mn">${L(m[7],m[8])}</td></tr>`).join('');
+ const picks=MZ.map((m,i)=>m[9]?`<button data-mzp="${i}" aria-pressed="${i===2}">${m[0]} <span class="ar">${m[4]}</span></button>`:'').join('');
+ return `<section class="lvl wide" id="mazid">${head('mazid','Verbs with added letters (mazīd fīh)','মাযীদ ফীহ: অতিরিক্ত অক্ষরযুক্ত ক্রিয়া','الثُّلَاثِيُّ الْمَزِيدُ فِيهِ وَالرُّبَاعِيُّ','Adding letters to the root changes the meaning in regular ways. Western books number these Forms II–X; madrasa books name them by their maṣdar (bāb al-ifʿāl and so on). The ك ت ب family appears in six of them.','মূলের সাথে অক্ষর যোগ করলে অর্থ নিয়মিতভাবে বদলায়। পশ্চিমা বইয়ে এগুলো Form II–X নামে, মাদরাসার কিতাবে মাসদার দিয়ে নামকরণ (বাবে ইফআল ইত্যাদি)। ك ت ب পরিবার এর ছয়টিতে আছে।')}
+ <div class="tw mz"><table><thead><tr><th>Form</th><th>${TH('Bāb and pattern','বাব ও ওজন')}</th><th class="past">${TH('Past','মাযী')}</th><th class="pres">${TH('Present','মুযারে’')}</th><th>${TH('Maṣdar','মাসদার')}</th><th>${TH('Doer','ফায়েল')}</th><th>${TH('Done-to','মাফউল')}</th><th class="amr">${TH('Command','আমর')}</th><th>${TH('From the root ك ت ب','মূল ك ت ب থেকে')}</th><th>${TH('Main meaning','মূল অর্থ')}</th></tr></thead><tbody>${rows}</tbody></table></div>
+ <div class="grid3 mt">
+  <div class="panel c" style="--c:var(--pres)"><h3>${L('Prefix rule','চিহ্নের নিয়ম')}</h3><p>${LB('Forms IV, II, III and the basic four-letter verb have four letters in the past, so their prefix takes ḍamma: يُكْرِمُ، يُعَلِّمُ، يُكَاتِبُ، يُدَحْرِجُ. All others take fatḥa.','IV, II, III ও মূল চার অক্ষরের ক্রিয়ায় মাযীতে চার অক্ষর, তাই চিহ্নে পেশ: يُكْرِمُ، يُعَلِّمُ، يُكَاتِبُ، يُدَحْرِجُ। বাকি সবগুলোতে যবর।')}</p></div>
+  <div class="panel c" style="--c:var(--der)"><h3>${L('Participle rule','ফায়েল-মাফউলের নিয়ম')}</h3><p>${LB('Replace the prefix with مُـ. Kasra before the last letter gives the doer; fatḥa gives the done-to: يُكَاتِبُ → مُكَاتِبٌ / مُكَاتَبٌ.','চিহ্নের জায়গায় مُـ বসান। শেষ অক্ষরের আগে যের হলে ফায়েল, যবর হলে মাফউল: يُكَاتِبُ → مُكَاتِبٌ / مُكَاتَبٌ।')}</p></div>
+  <div class="panel c" style="--c:var(--amr)"><h3>${L('Hamza rule','হামযার নিয়ম')}</h3><p>${LB('Forms VII–X start with hamzat al-waṣl (اِ), silent in connected speech. Form IV starts with hamzat al-qaṭʿ (أَ), always pronounced.','VII–X রূপ হামযায়ে ওয়াসল (اِ) দিয়ে শুরু, মিলিয়ে পড়লে উচ্চারিত হয় না। IV রূপ হামযায়ে কাত’ (أَ) দিয়ে শুরু, সর্বদা উচ্চারিত।')}</p></div>
+ </div>
+ <div class="panel mt"><h3>${L('Conjugate a ك ت ب form in all 14 positions','ك ت ب-এর একটি রূপ ১৪ সীগাহতে দেখুন')}</h3><div class="picker" id="mzPick">${picks}</div><div class="tw"><table id="mzConj"></table></div>
+  <p class="note">${L('The endings are exactly the ones you learned for كَتَبَ يَكْتُبُ. Only the stem changes.','শেষাংশ হুবহু كَتَبَ يَكْتُبُ-এর মতো। শুধু মূলাংশ বদলায়।')}</p></div>
+ <div class="grid2 mt">
+  <div class="panel"><h3>${L('Four-letter verbs','রুবায়ী ক্রিয়া')}<span class="ar">الرُّبَاعِيّ</span></h3><div class="tw"><table><tbody>${RB.map(r=>`<tr><td><span class="ar" style="font-size:17px">${r[0]}</span></td><td><span class="ar">${r[1]}</span></td><td class="mn">${L(r[2],r[3])}</td></tr>`).join('')}</tbody></table></div></div>
+  <div class="panel"><h3>${L('Rare forms','বিরল রূপ')}</h3><p>${LB('XI اِحْمَارَّ (to become very red), XII اِخْشَوْشَنَ (to become rough), XIII اِجْلَوَّذَ (to hurry). Learn them by recognition only.','XI اِحْمَارَّ (খুব লাল হওয়া), XII اِخْشَوْشَنَ (রুক্ষ হওয়া), XIII اِجْلَوَّذَ (দ্রুত চলা)। শুধু চিনে রাখলেই যথেষ্ট।')}</p></div>
+ </div></section>`;}
+function fillMazid(i){const m=MZ[i],v=m[9];
+ const md=o=>{const b=o.md[1].slice(-1);return ['',v.p+b,o.md[2]];};
+ const mu=o=>[o.mu[0][0]+v.v,v.s+o.mu[1].slice(-1),o.mu[2]];
+ const R=f=>`<span class="ar form-x"><span class="ad">${f[0]}</span><span class="rt">${f[1]}</span><span class="ad">${f[2]}</span></span>`;
+ $('#mzConj').innerHTML=slotTable([{h:TH('Pronoun','সর্বনাম')},{h:TH('Past','মাযী'),cls:'past'},{h:TH('Present','মুযারে’'),cls:'pres'}],o=>`${prCell(o)}<td class="f">${R(md(o))}</td><td class="f">${R(mu(o))}</td>`);
+ document.querySelectorAll('#mzPick button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.mzp===i));
+ afterRender($('#mzConj'));}
+
+/* ================= 13. seven types ================= */
+const AQ=[
+ ['صَحِيح','Sound','সহীহ','No hamza, weak letter or doubled letter in the root.','মূলে হামযা, দুর্বল অক্ষর বা দ্বিত্ব নেই।','كَتَبَ يَكْتُبُ كِتَابَةً اُكْتُبْ','Nothing changes.','কিছুই বদলায় না।'],
+ ['مَهْمُوز','With hamza','মাহমূয','A hamza is one of the root letters.','মূলের কোনো অক্ষর হামযা।','أَكَلَ يَأْكُلُ — سَأَلَ يَسْأَلُ — قَرَأَ يَقْرَأُ','Hamza may soften; a few commands drop it: كُلْ، خُذْ، مُرْ.','হামযা নরম হতে পারে; কিছু আমরে বাদ পড়ে: كُلْ، خُذْ، مُرْ।'],
+ ['مِثَال','First letter weak','মিসাল','First root letter is و or ي.','প্রথম মূল অক্ষর و বা ي।','وَعَدَ يَعِدُ وَعْدًا عِدْ','In Bāb Ḍaraba the wāw drops in the present and command: يَعِدُ، عِدْ.','বাবে যারাবায় মুযারে’ ও আমরে ওয়াও পড়ে যায়: يَعِدُ، عِدْ।'],
+ ['أَجْوَف','Hollow (middle weak)','আজওয়াফ','Middle root letter is و or ي.','মধ্য মূল অক্ষর و বা ي।','قَالَ يَقُولُ قَوْلًا قُلْ — بَاعَ يَبِيعُ بِعْ','قَوَلَ becomes قَالَ; the long vowel shortens before a sukūn: قُلْتُ، قُلْ.','قَوَلَ থেকে قَالَ; সাকিনের আগে দীর্ঘস্বর ছোট হয়: قُلْتُ، قُلْ।'],
+ ['نَاقِص','Defective (last weak)','নাকিস','Last root letter is و or ي.','শেষ মূল অক্ষর و বা ي।','دَعَا يَدْعُو دُعَاءً اُدْعُ — رَمَى يَرْمِي اِرْمِ','The last letter becomes alif in the past and drops in jazm: لَمْ يَدْعُ، اُدْعُ.','মাযীতে শেষ অক্ষর আলিফ হয়, জযমে পড়ে যায়: لَمْ يَدْعُ، اُدْعُ।'],
+ ['لَفِيف مَفْرُوق','Split doubly weak','লাফীফে মাফরূক','First and last letters weak.','প্রথম ও শেষ অক্ষর দুর্বল।','وَقَى يَقِي وِقَايَةً قِ','Both rules at once: the command is a single letter, قِ “protect!”.','দুই নিয়ম একসাথে: আমর মাত্র এক অক্ষর, قِ “রক্ষা করো!”।'],
+ ['لَفِيف مَقْرُون','Joined doubly weak','লাফীফে মাকরূন','Middle and last letters weak.','মধ্য ও শেষ অক্ষর দুর্বল।','طَوَى يَطْوِي طَيًّا اِطْوِ','The middle stays; the last behaves like nāqiṣ.','মধ্যটি স্থির থাকে; শেষটি নাকিসের মতো আচরণ করে।'],
+ ['مُضَاعَف','Doubled','মুযাআফ','Middle and last letters are the same.','মধ্য ও শেষ অক্ষর একই।','مَدَّ يَمُدُّ مَدًّا مُدَّ / اُمْدُدْ','The two letters merge (idghām) but separate before a consonant suffix: مَدَدْتُ.','দুই অক্ষর মিলে যায় (ইদগাম), কিন্তু ব্যঞ্জন প্রত্যয়ের আগে আলাদা হয়: مَدَدْتُ।']];
+const WK={qala:['قَالَ','قَالَا','قَالُوا','قَالَتْ','قَالَتَا','قُلْنَ','قُلْتَ','قُلْتُمَا','قُلْتُمْ','قُلْتِ','قُلْتُمَا','قُلْتُنَّ','قُلْتُ','قُلْنَا'],
+ daa:['دَعَا','دَعَوَا','دَعَوْا','دَعَتْ','دَعَتَا','دَعَوْنَ','دَعَوْتَ','دَعَوْتُمَا','دَعَوْتُمْ','دَعَوْتِ','دَعَوْتُمَا','دَعَوْتُنَّ','دَعَوْتُ','دَعَوْنَا'],
+ madda:['مَدَّ','مَدَّا','مَدُّوا','مَدَّتْ','مَدَّتَا','مَدَدْنَ','مَدَدْتَ','مَدَدْتُمَا','مَدَدْتُمْ','مَدَدْتِ','مَدَدْتُمَا','مَدَدْتُنَّ','مَدَدْتُ','مَدَدْنَا'],
+ yaqul:['يَقُولُ','يَقُولَانِ','يَقُولُونَ','تَقُولُ','تَقُولَانِ','يَقُلْنَ','تَقُولُ','تَقُولَانِ','تَقُولُونَ','تَقُولِينَ','تَقُولَانِ','تَقُلْنَ','أَقُولُ','نَقُولُ'],
+ yaid:['يَعِدُ','يَعِدَانِ','يَعِدُونَ','تَعِدُ','تَعِدَانِ','يَعِدْنَ','تَعِدُ','تَعِدَانِ','تَعِدُونَ','تَعِدِينَ','تَعِدَانِ','تَعِدْنَ','أَعِدُ','نَعِدُ'],
+ yarmi:['يَرْمِي','يَرْمِيَانِ','يَرْمُونَ','تَرْمِي','تَرْمِيَانِ','يَرْمِينَ','تَرْمِي','تَرْمِيَانِ','تَرْمُونَ','تَرْمِينَ','تَرْمِيَانِ','تَرْمِينَ','أَرْمِي','نَرْمِي']};
+const WKA=[['قُلْ','قُولَا','قُولُوا','قُولِي','قُولَا','قُلْنَ'],['عِدْ','عِدَا','عِدُوا','عِدِي','عِدَا','عِدْنَ'],['اُدْعُ','اُدْعُوَا','اُدْعُوا','اُدْعِي','اُدْعُوَا','اُدْعُونَ'],['اِرْمِ','اِرْمِيَا','اِرْمُوا','اِرْمِي','اِرْمِيَا','اِرْمِينَ'],['قِ','قِيَا','قُوا','قِي','قِيَا','قِينَ'],['مُدَّ','مُدَّا','مُدُّوا','مُدِّي','مُدَّا','اُمْدُدْنَ']];
+function secAqsam(){
+ const ar=t=>`<td class="f"><span class="ar">${t}</span></td>`;
+ const cmp=slotTable([{h:TH('Pronoun','সর্বনাম')},{h:'<span class="ar">كَتَبَ</span>'+L('sound','সহীহ'),cls:'past'},{h:'<span class="ar">قَالَ</span>'+L('hollow','আজওয়াফ'),cls:'weak'},{h:'<span class="ar">دَعَا</span>'+L('defective','নাকিস'),cls:'weak'},{h:'<span class="ar">مَدَّ</span>'+L('doubled','মুযাআফ'),cls:'weak'},{h:'<span class="ar">يَقُولُ</span>'+L('hollow','আজওয়াফ'),cls:'pres'},{h:'<span class="ar">يَعِدُ</span>'+L('first weak','মিসাল'),cls:'pres'},{h:'<span class="ar">يَرْمِي</span>'+L('defective','নাকিস'),cls:'pres'}],
+  o=>{const i=o.n-1;return prCell(o)+ar(MD[i].join(''))+ar(WK.qala[i])+ar(WK.daa[i])+ar(WK.madda[i])+ar(WK.yaqul[i])+ar(WK.yaid[i])+ar(WK.yarmi[i]);});
+ const amr=slotTable([{h:TH('Addressed to','যাকে বলা হচ্ছে')},{h:'<span class="ar">اُكْتُبْ</span>',cls:'amr'},{h:'<span class="ar">قُلْ</span>',cls:'amr'},{h:'<span class="ar">عِدْ</span>',cls:'amr'},{h:'<span class="ar">اُدْعُ</span>',cls:'amr'},{h:'<span class="ar">اِرْمِ</span>',cls:'amr'},{h:'<span class="ar">قِ</span>',cls:'amr'},{h:'<span class="ar">مُدَّ</span>',cls:'amr'}],
+  o=>{const i=o.n-7;return `<td class="pr"><span class="ar">${o.pr}</span> ${L(o.ep,o.bnTo)}</td>`+ar(formText('amr',o.n))+WKA.map(a=>ar(a[i])).join('');},is2);
+ return `<section class="lvl wide" id="aqsam">${head('aqsam','The seven root types (haft aqsām)','হাফত আকসাম: মূলের সাত প্রকার','الْأَقْسَامُ السَّبْعَةُ','When a root contains a hamza, a weak letter (و ي ا) or a doubled letter, the same endings meet the root differently and some letters change or drop.','মূলে হামযা, দুর্বল অক্ষর (و ي ا) বা দ্বিত্ব থাকলে একই শেষাংশ ভিন্নভাবে যুক্ত হয়; কিছু অক্ষর বদলায় বা পড়ে যায়।')}
+ <div class="tw aq"><table><thead><tr><th>${TH('Type','প্রকার')}</th><th>${TH('What it means','সংজ্ঞা')}</th><th>${TH('Example','উদাহরণ')}</th><th>${TH('What changes','কী বদলায়')}</th></tr></thead><tbody>${AQ.map(a=>`<tr><td><span class="ar">${a[0]}</span><br>${L(a[1],a[2])}</td><td class="mn">${L(a[3],a[4])}</td><td><span class="ar">${a[5]}</span></td><td class="mn">${L(a[6],a[7])}</td></tr>`).join('')}</tbody></table></div>
+ <div class="tip">${LB('Weak letters follow a few habits: a weak letter with a vowel after fatḥa turns into alif (قَوَلَ → قَالَ); a long vowel shortens before sukūn (قَالَ → قُلْتُ); a final weak letter drops in jazm (يَدْعُو → لَمْ يَدْعُ).','দুর্বল অক্ষরের কিছু অভ্যাস: যবরের পরে হরকতযুক্ত দুর্বল অক্ষর আলিফ হয় (قَوَلَ → قَالَ); সাকিনের আগে দীর্ঘস্বর ছোট হয় (قَالَ → قُلْتُ); জযমে শেষের দুর্বল অক্ষর পড়ে যায় (يَدْعُو → لَمْ يَدْعُ)।')}</div>
+ <h3 class="mt">${L('Side by side: the same 14 endings on different roots','পাশাপাশি: ভিন্ন মূলে একই ১৪ শেষাংশ')}</h3>
+ <div class="tw mt"><table>${cmp}</table></div>
+ <h3 class="mt">${L('Commands of weak verbs','দুর্বল ক্রিয়ার আমর')}</h3>
+ <div class="tw mt"><table>${amr}</table></div></section>`;}
+
+/* ================= 14. bridge ================= */
+function secBridge(){
+ const R=[
+  ['Root','মূল','مَادَّة','root','ধাতু (√লিখ্)','ك ت ب ↔ √লিখ্','Arabic roots are consonants only; vowels come from patterns. A Bangla ধাতু carries its own vowel.','আরবি মূল শুধু ব্যঞ্জন; হরকত আসে ওজন থেকে। বাংলা ধাতুর নিজস্ব স্বর থাকে।'],
+  ['Endings show the person','শেষাংশে পুরুষ','ضَمَائِر','mostly no','বিভক্তি','كَتَبْتُ ↔ লিখলাম','Bangla, like Arabic, marks the person on the verb (আমি লিখলাম, তুমি লিখলে). English does not, except -s.','আরবির মতো বাংলাও ক্রিয়ায় পুরুষ বোঝায় (আমি লিখলাম, তুমি লিখলে)। ইংরেজিতে প্রায় নেই, শুধু -s।'],
+  ['Person','পুরুষ','غَائِب / مُخَاطَب / مُتَكَلِّم','3rd / 2nd / 1st','নাম (প্রথম) / মধ্যম / উত্তম পুরুষ','هُوَ ↔ সে ↔ he','Careful: Bangla “প্রথম পুরুষ” means the THIRD person (সে).','সাবধান: বাংলায় “প্রথম পুরুষ” মানে তৃতীয় পুরুষ (সে), প্রথম নয়।'],
+  ['Number','বচন','وَاحِد / تَثْنِيَة / جَمْع','singular / plural','একবচন / বহুবচন','كَتَبَا ↔ তারা দুজন লিখল','Neither English nor Bangla has dual verbs. Arabic does, except for “we”.','ইংরেজি বা বাংলায় দ্বিবচনের ক্রিয়া নেই। আরবিতে আছে, শুধু “আমরা” ছাড়া।'],
+  ['Gender','লিঙ্গ','مُذَكَّر / مُؤَنَّث','he / she only','সে = নারী-পুরুষ উভয়','أَنْتَ / أَنْتِ ↔ তুমি','Bangla verbs and pronouns ignore gender; English marks it only in he/she. Arabic marks it on “you”, “they” and the verb.','বাংলা ক্রিয়া ও সর্বনামে লিঙ্গভেদ নেই; ইংরেজিতে শুধু he/she। আরবিতে “তুমি”, “তারা” ও ক্রিয়াতেও আছে।'],
+  ['Respect level','সম্মানসূচক রূপ','—','—','তুই / তুমি / আপনি','أَنْتَ ↔ তুমি / আপনি','Bangla changes the verb for respect (লিখিস, লেখো, লেখেন). Arabic has no such forms: أَنْتَ is used for a king and a child alike.','বাংলায় সম্মান অনুযায়ী ক্রিয়া বদলায় (লিখিস, লেখো, লেখেন)। আরবিতে এমন রূপ নেই: রাজা ও শিশু উভয়কে أَنْتَ বলা হয়।'],
+  ['Tense','কাল','مَاضٍ / مُضَارِع','past / present / future','অতীত / বর্তমান / ভবিষ্যৎ','كَتَبَ / يَكْتُبُ / سَيَكْتُبُ ↔ লিখল / লেখে / লিখবে','Arabic has two conjugations (complete vs not). Perfect and continuous tenses (লিখেছে, লিখছিল) are built with قَدْ and كَانَ.','আরবিতে দুটি গারদান (সম্পন্ন বনাম অসম্পন্ন)। পুরাঘটিত ও ঘটমান কাল (লিখেছে, লিখছিল) قَدْ ও كَانَ দিয়ে গঠিত।'],
+  ['Command','আদেশ','أَمْر / نَهْي','Write! / Don’t write!','অনুজ্ঞা: লেখো / লিখো না / সে লিখুক','اُكْتُبْ / لِيَكْتُبْ ↔ লেখো / সে লিখুক','Bangla has a 3rd-person command (সে লিখুক) just like Arabic لِيَكْتُبْ; English needs “let him”.','বাংলায় আরবি لِيَكْتُبْ-এর মতো নাম পুরুষের আদেশ আছে (সে লিখুক); ইংরেজিতে “let him” লাগে।'],
+  ['Voice','বাচ্য','مَعْلُوم / مَجْهُول','active / passive','কর্তৃবাচ্য / কর্মবাচ্য','كُتِبَ ↔ লেখা হলো','Arabic changes only the vowels; Bangla adds হলো, English adds “was”.','আরবিতে শুধু হরকত বদলায়; বাংলায় “হলো”, ইংরেজিতে “was” যোগ হয়।'],
+  ['Negation','নাবোধক','لَا / لَنْ / لَمْ / مَا','not','না / -নি','لَمْ يَكْتُبْ ↔ লেখেনি','Both Bangla and Arabic pick the negative by time: -নি for past (লেখেনি) like لَمْ.','বাংলা ও আরবি দুটোই সময় অনুযায়ী নাবোধক বেছে নেয়: অতীতে -নি (লেখেনি), যেমন لَمْ।'],
+  ['Verbal noun','ক্রিয়াবিশেষ্য','مَصْدَر','-ing (writing)','ক্রিয়াবিশেষ্য (লেখা)','كِتَابَةٌ ↔ লেখা','Arabic basic-verb maṣdars vary and must be learned.','আরবি মূল ক্রিয়ার মাসদার ভিন্ন ভিন্ন, মুখস্থ করতে হয়।'],
+  ['Doer / done-to','কর্তা / কর্ম','فَاعِل / مَفْعُول','writer / written','লেখক / লিখিত','كَاتِبٌ / مَكْتُوبٌ ↔ লেখক / লিখিত','Bangla (from Sanskrit) also uses fixed patterns: লেখক, লিখিত, like فَاعِل and مَفْعُول.','বাংলাও (সংস্কৃত থেকে) নির্দিষ্ট ছাঁচ ব্যবহার করে: লেখক, লিখিত — فَاعِل ও مَفْعُول-এর মতো।']];
+ return `<section class="lvl wide" id="bridge">${head('bridge','If you know English or Bangla grammar, you can understand Ṣarf','ইংরেজি বা বাংলা ব্যাকরণ জানলে সরফও বুঝবেন','الصَّرْفُ بِلُغَتِكَ','Each idea has a partner in the language you know. The last column shows where the match is not exact.','প্রতিটি ধারণার একটি মিল আপনার জানা ভাষায় আছে। শেষ কলামে দেখানো হয়েছে কোথায় মিল হুবহু নয়।')}
+ <div class="tw"><table><thead><tr><th>${TH('Idea','ধারণা')}</th><th>${TH('Arabic','আরবি')}</th><th>English</th><th><span class="bnl" style="font-family:var(--bnf)">বাংলা ব্যাকরণ</span></th><th>${TH('Example','উদাহরণ')}</th><th>${TH('Where they differ','পার্থক্য')}</th></tr></thead><tbody>${R.map(r=>`<tr><td><b>${L(r[0],r[1])}</b></td><td><span class="ar" style="font-size:19px">${r[2]}</span></td><td>${r[3]}</td><td style="font-family:var(--bnf)">${r[4]}</td><td>${r[5]}</td><td class="mn note">${L(r[6],r[7])}</td></tr>`).join('')}</tbody></table></div></section>`;}
+
+/* ================= 15. glossary ================= */
+const GL=[['عِلْمُ الصَّرْف','ইলমুস সরফ','morphology: the study of word forms','শব্দরূপতত্ত্ব: শব্দের গঠনবিদ্যা'],['عِلْمُ النَّحْو','ইলমুন নাহু','syntax: words in sentences and their endings','বাক্যতত্ত্ব: বাক্যে শব্দের অবস্থান ও শেষ হরকত'],['كَلِمَة','কালিমা','word','শব্দ'],['اِسْم','ইসম','noun (incl. adjectives, participles)','বিশেষ্য (বিশেষণ ও কৃদন্তসহ)'],['فِعْل','ফে’ল','verb','ক্রিয়া'],['حَرْف','হরফ','particle','অব্যয়'],['مَادَّة / جِذْر','মাদ্দাহ / জিযর','root letters','মূল অক্ষর (ধাতু)'],['مِيزَان / وَزْن','মীযান / ওযন','pattern; the ف ع ل scale','ওজন; ف ع ل মাপকাঠি'],['صِيغَة','সীগাহ','one conjugated form or position','একটি রূপ বা অবস্থান'],['بَاب','বাব','verb family (pattern class)','ক্রিয়ার শ্রেণি'],['ثُلَاثِيّ / رُبَاعِيّ','সুলাসী / রুবায়ী','three-letter / four-letter root','তিন / চার অক্ষরের মূল'],['مُجَرَّد / مَزِيد فِيه','মুজাররাদ / মাযীদ ফীহ','root letters only / with added letters','শুধু মূল / অতিরিক্তসহ'],['مَاضٍ','মাযী','past (completed)','অতীত (সম্পন্ন)'],['مُضَارِع','মুযারে’','present-future (incomplete)','বর্তমান-ভবিষ্যৎ (অসম্পন্ন)'],['حَال / اِسْتِقْبَال','হাল / ইস্তিকবাল','present time / future time','বর্তমান কাল / ভবিষ্যৎ কাল'],['أَمْر / نَهْي','আমর / নাহী','command / prohibition','আদেশ / নিষেধ'],['مَعْلُوم / مَجْهُول','মা’লূম / মাজহূল','active / passive','কর্তৃবাচ্য / কর্মবাচ্য'],['مُثْبَت / مَنْفِيّ','মুসবাত / মানফী','affirmative / negative','হ্যাঁবোধক / নাবোধক'],['لَازِم / مُتَعَدٍّ','লাযিম / মুতাআদ্দী','intransitive / transitive','অকর্মক / সকর্মক'],['غَائِب','গায়েব','third person','নাম পুরুষ (প্রথম পুরুষ)'],['مُخَاطَب','মুখাতাব (হাযির)','second person','মধ্যম পুরুষ'],['مُتَكَلِّم','মুতাকাল্লিম','first person','উত্তম পুরুষ'],['وَاحِد / تَثْنِيَة / جَمْع','ওয়াহিদ / তাসনিয়া / জমা','singular / dual / plural','একবচন / দ্বিবচন / বহুবচন'],['مُذَكَّر / مُؤَنَّث','মুযাক্কার / মুয়ান্নাস','masculine / feminine','পুংলিঙ্গ / স্ত্রীলিঙ্গ'],['مَرْفُوع / مَنْصُوب / مَجْزُوم','মারফূ’ / মানসূব / মাজযূম','indicative / subjunctive / jussive','পেশযুক্ত / যবরযুক্ত / জযমযুক্ত'],['ضَمِير مُتَّصِل','যমীরে মুত্তাসিল','attached pronoun','সংযুক্ত সর্বনাম'],['مَصْدَر','মাসদার','verbal noun','ক্রিয়াবিশেষ্য'],['اِسْمُ الْفَاعِل','ইসমে ফায়েল','active participle: writer','কর্তাবাচক: লেখক'],['اِسْمُ الْمَفْعُول','ইসমে মাফউল','passive participle: written','কর্মবাচক: লিখিত'],['اِسْمُ الظَّرْف','ইসমে যরফ','noun of place or time','স্থান বা কালবাচক বিশেষ্য'],['اِسْمُ الْآلَة','ইসমে আলা','noun of instrument','যন্ত্রবাচক বিশেষ্য'],['اِسْمُ التَّفْضِيل','ইসমে তাফযীল','comparative / superlative','তুলনাবাচক'],['الصِّفَةُ الْمُشَبَّهَة','সিফাতে মুশাব্বাহা','adjective of lasting quality','স্থায়ী গুণবাচক বিশেষণ'],['صِيغَةُ الْمُبَالَغَة','মুবালাগার সীগাহ','intensive form','আধিক্যবাচক রূপ'],['فِعْلُ التَّعَجُّب','ফে’লে তাআজ্জুব','verb of wonder','বিস্ময়সূচক ক্রিয়া'],['نُونُ التَّأْكِيد','নূনে তাকীদ','nūn of emphasis','জোর প্রকাশক নূন'],['لَامُ الْأَمْر','লামে আমর','lām of command: لِيَكْتُبْ','আদেশের লাম: لِيَكْتُبْ'],['لَا النَّاهِيَة','লায়ে নাহিয়া','lā of prohibition','নিষেধের লা'],['هَمْزَةُ الْوَصْل','হামযায়ে ওয়াসল','helping hamza, dropped in connected speech','সংযোগের হামযা, মিলিয়ে পড়লে বাদ'],['هَمْزَةُ الْقَطْع','হামযায়ে কাত’','hamza that is always pronounced','সর্বদা উচ্চারিত হামযা'],['حُرُوفُ الْعِلَّة','হুরূফে ইল্লত','weak letters و ي ا','দুর্বল অক্ষর و ي ا'],['صَحِيح / مُعْتَلّ','সহীহ / মু’তাল','sound / weak','সুস্থ / দুর্বল'],['مَهْمُوز','মাহমূয','root with a hamza','হামযাযুক্ত মূল'],['مِثَال','মিসাল','first root letter weak','প্রথম অক্ষর দুর্বল'],['أَجْوَف','আজওয়াফ','middle root letter weak','মধ্য অক্ষর দুর্বল'],['نَاقِص','নাকিস','last root letter weak','শেষ অক্ষর দুর্বল'],['لَفِيف','লাফীফ','two weak root letters','দুটি দুর্বল অক্ষর'],['مُضَاعَف','মুযাআফ','doubled root','দ্বিত্ব অক্ষরযুক্ত মূল'],['إِدْغَام','ইদগাম','merging two identical letters','দুই একই অক্ষর মিলে যাওয়া'],['صَرْف صَغِير / كَبِير','সরফে সগীর / কাবীর','short family recitation / full 14-form tables','সংক্ষিপ্ত আবৃত্তি / পূর্ণ ১৪ সীগাহর ছক']];
+function secGlossary(){
+ return `<section class="lvl wide" id="glossary">${head('glossary','Glossary of Ṣarf terms','সরফের পরিভাষা','مُصْطَلَحَاتُ الصَّرْفِ','Every technical word on this page, with its madrasa pronunciation in Bangla and its meaning.','এই পৃষ্ঠার প্রতিটি পরিভাষা, বাংলায় মাদরাসার উচ্চারণ ও অর্থসহ।')}
+ <input class="gl-search" id="glq" type="search" placeholder="Search · খুঁজুন · ابحث" aria-label="Search glossary">
+ <div class="tw"><table id="glt"><thead><tr><th>${TH('Arabic','আরবি')}</th><th>${TH('Madrasa pronunciation','মাদরাসার উচ্চারণ')}</th><th>${TH('Meaning','অর্থ')}</th></tr></thead><tbody>${GL.map(g=>`<tr><td><span class="ar">${g[0]}</span></td><td style="font-family:var(--bnf)">${g[1]}</td><td class="mn">${L(g[2],g[3])}</td></tr>`).join('')}</tbody></table></div></section>`;}
+/* ================= 16. quiz ================= */
+function secQuiz(){return `<section class="lvl no-print" id="quiz">${head('quiz','Practice quiz','অনুশীলন কুইজ','','Ten mixed questions: name the ṣīghah, pick the form, change past to present, give the command, find the bāb, the mazīd form or the root type.','দশটি মিশ্র প্রশ্ন: সীগাহ চিনুন, সঠিক রূপ বাছুন, মাযী থেকে মুযারে’, আমর, বাব, মাযীদ রূপ বা মূলের প্রকার নির্ণয় করুন।')}
+ <div class="panel quiz"><div class="note" id="qprog"></div><div class="qq" id="qq"></div><div class="opts" id="opts"></div><div class="fb" id="fb"></div>
+ <div class="qfoot"><span id="qscore" class="note"></span><button class="tbtn primary" id="qnext">${L('Next question','পরের প্রশ্ন')}</button></div></div></section>`;}
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+function distinct(c,pool,k=3){const o=[];for(const p of shuffle(pool)){if(p!==c&&!o.includes(p))o.push(p);if(o.length===k)break;}return o;}
+const QBAB=[['جَلَسَ يَجْلِسُ',1],['دَخَلَ يَدْخُلُ',0],['ذَهَبَ يَذْهَبُ',2],['عَلِمَ يَعْلَمُ',3],['شَرُفَ يَشْرُفُ',4],['وَرِثَ يَرِثُ',5],['خَرَجَ يَخْرُجُ',0],['قَرَأَ يَقْرَأُ',2],['فَهِمَ يَفْهَمُ',3],['حَسُنَ يَحْسُنُ',4],['صَبَرَ يَصْبِرُ',1],['كَتَبَ يَكْتُبُ',0]];
+const QAQ=[['أَخَذَ',1],['وَزَنَ',2],['صَامَ',3],['نَسِيَ',4],['وَفَى',5],['رَوَى',6],['شَدَّ',7],['جَلَسَ',0],['سَأَلَ',1],['يَسَرَ',2]];
+const QMZ=[['أَرْسَلَ',0],['دَرَّسَ',1],['قَاتَلَ',2],['تَكَلَّمَ',3],['تَعَاوَنَ',4],['اِنْطَلَقَ',5],['اِسْتَمَعَ',6],['اِصْفَرَّ',7],['اِسْتَخْرَجَ',8]];
+function makeQ(){
+ const type=rnd(['id','pick','conv','amr','bab','aq','mz','id','pick']);
+ const ch=(h,ok)=>({h,ok});
+ if(type==='id'){const k=rnd(['md','mu']);const n=rnd(S).n;const f=formText(k,n);const ok=S.filter(o=>formText(k,o.n)===f).map(o=>o.n);
+  const opts=shuffle([n,...shuffle(S.filter(o=>!ok.includes(o.n))).slice(0,3).map(o=>o.n)]);
+  const also=ok.filter(x=>x!==n);
+  return{q:L('Which ṣīghah is','কোন সীগাহ?')+` <span class="ar">${f}</span>`,opts:opts.map(m=>ch(`<span class="ar" style="font-size:18px">${S[m-1].name}</span><br><small>${S[m-1].pr} · ${L(S[m-1].who,S[m-1].bnP)}</small>`,m===n)),
+   fb:[`${S[n-1].who} (${n}).${also.length?' The same spelling also serves '+also.map(x=>S[x-1].who+' ('+x+')').join(', ')+'.':''}`,`${S[n-1].bnP} (${n})।${also.length?' একই বানান '+also.map(x=>S[x-1].bnP+' ('+x+')').join(', ')+'-এর জন্যও।':''}`]};}
+ if(type==='pick'){const k=rnd(['md','mu','fu','jazm']);const o=rnd(S);const c=formText(k,o.n);const w=distinct(c,S.map(x=>formText(k,x.n)));const m=meaning(k,o.n);
+  return{q:L(`Choose the form: “${m[0]}”`,`সঠিক রূপ বাছুন: “${m[1]}”`)+` <span class="ar" style="font-size:22px">(${o.pr})</span>`,opts:shuffle([c,...w]).map(x=>ch(`<span class="ar">${x}</span>`,x===c)),fb:[`${c}: ${KN[k][0]}.`,`${c}: ${KN[k][1]}।`]};}
+ if(type==='conv'){const o=rnd(S);const src=formText('md',o.n),c=formText('mu',o.n);const w=distinct(c,S.map(x=>formText('mu',x.n)).concat(S.map(x=>formText('nasb',x.n))));
+  return{q:L('Turn this past into the present (same person):','এই মাযীকে মুযারে’ করুন (একই সীগাহ):')+` <span class="ar">${src}</span>`,opts:shuffle([c,...w]).map(x=>ch(`<span class="ar">${x}</span>`,x===c)),fb:[`${src} → ${c}: “${meaning('mu',o.n)[0]}”.`,`${src} → ${c}: “${meaning('mu',o.n)[1]}”।`]};}
+ if(type==='amr'){const o=rnd(S.filter(is2));const c=formText('amr',o.n);const w=distinct(c,S.filter(is2).map(x=>formText('amr',x.n)).concat([formText('mu',o.n),formText('nahy',o.n)]));
+  return{q:L(`Command “Write!” to ${o.ep}`,`${o.bnTo} আদেশ “লেখো!”`)+` <span class="ar" style="font-size:22px">(${o.pr})</span>`,opts:shuffle([c,...w]).map(x=>ch(`<span class="ar">${x}</span>`,x===c)),fb:[`${c}: drop تَ, add اُ, use the jussive ending.`,`${c}: تَ বাদ, اُ যোগ, জযমের শেষাংশ।`]};}
+ if(type==='bab'){const q=rnd(QBAB);const opts=shuffle([q[1],...shuffle([0,1,2,3,4,5].filter(x=>x!==q[1])).slice(0,3)]);const b=BAB[q[1]];
+  return{q:L('Which bāb does this verb belong to?','এই ক্রিয়াটি কোন বাবের?')+` <span class="ar">${q[0]}</span>`,opts:opts.map(i=>ch(`<span class="ar">بَابُ ${BAB[i][0]}</span><br><small>${BAB[i][7]} → ${BAB[i][8]}</small>`,i===q[1])),fb:[`Bāb ${b[0]}: middle vowel ${b[7]} in the past, ${b[8]} in the present.`,`বাবে ${b[0]}: মাযীতে মাঝে ${b[7]}, মুযারে’তে ${b[8]}।`]};}
+ if(type==='aq'){const q=rnd(QAQ);const opts=shuffle([q[1],...shuffle([0,1,2,3,4,5,6,7].filter(x=>x!==q[1])).slice(0,3)]);const a=AQ[q[1]];
+  return{q:L('Which root type is','মূলটি কোন প্রকার?')+` <span class="ar">${q[0]}</span>`,opts:opts.map(i=>ch(`<span class="ar">${AQ[i][0]}</span><br><small>${L(AQ[i][1],AQ[i][2])}</small>`,i===q[1])),fb:[`${a[1]}: ${a[3]}`,`${a[2]}: ${a[4]}`]};}
+ const q=rnd(QMZ);const opts=shuffle([q[1],...shuffle([0,1,2,3,4,5,6,7,8].filter(x=>x!==q[1])).slice(0,3)]);const m=MZ[q[1]];
+ return{q:L('Which added-letter form is','কোন মাযীদ রূপ?')+` <span class="ar">${q[0]}</span>`,opts:opts.map(i=>ch(`${MZ[i][0]} <span class="ar">${MZ[i][2]}</span>`,i===q[1])),fb:[`Form ${m[0]}, ${m[2]}: ${m[7]}`,`${m[0]} রূপ, ${m[2]}: ${m[8]}`]};}
+let qi=0,score=0,answered=false;
+function nextQ(){
+ if(qi>=10){$('#qq').innerHTML=L(`Finished: <b>${score} / 10</b>. ${score>=8?'Excellent: you see the system.':'Review the tables above and try again.'}`,`শেষ: <b>${score} / ১০</b>। ${score>=8?'চমৎকার! পদ্ধতিটি আপনি বুঝেছেন।':'ওপরের ছকগুলো আবার দেখুন, তারপর আবার চেষ্টা করুন।'}`);
+  $('#opts').innerHTML='';$('#fb').innerHTML='';$('#qnext').innerHTML=L('Start again','আবার শুরু');qi=-1;score=0;$('#qprog').textContent='';$('#qscore').textContent='';return;}
+ if(qi<0)qi=0;const Q=makeQ();answered=false;
+ $('#qprog').innerHTML=L(`Question ${qi+1} of 10`,`প্রশ্ন ${qi+1} / ১০`);$('#qq').innerHTML=Q.q;$('#fb').innerHTML='';$('#qnext').innerHTML=L('Next question','পরের প্রশ্ন');
+ const box=$('#opts');box.innerHTML='';
+ Q.opts.forEach(o=>{const b=document.createElement('button');b.innerHTML=o.h;b.addEventListener('click',()=>{if(answered)return;answered=true;if(o.ok)score++;
+  [...box.children].forEach((x,i)=>{if(Q.opts[i].ok)x.classList.add('right');});if(!o.ok)b.classList.add('wrong');
+  $('#fb').innerHTML=L((o.ok?'Correct. ':'Not quite. ')+Q.fb[0],(o.ok?'সঠিক। ':'হয়নি। ')+Q.fb[1]);$('#qscore').innerHTML=L(`Score ${score} / ${qi+1}`,`স্কোর ${score} / ${qi+1}`);qi++;});box.appendChild(b);});
+ afterRender($('#quiz'));}
+
+/* ================= assemble ================= */
+function footer(){return `<footer>${LB('Terminology note. Ṣīghah names, the order هُوَ … نَحْنُ, the six kinds of past and the haft aqsām follow South Asian madrasa teaching (Urdu, Persian and Bangla medium). Some of those books write the possible and wishful past as لَعَلَّمَا كَتَبَ and لَيْتَمَا كَتَبَ. Classical Arabic grammar describes the verb with two conjugations (māḍī and muḍāriʿ), the command, voice and mood, and treats the other meanings as particle constructions. Translations are guides, not one-to-one equivalents.','পরিভাষা প্রসঙ্গে: সীগাহর নাম, هُوَ … نَحْنُ ক্রম, মাযীর ছয় প্রকার ও হাফত আকসাম উপমহাদেশের মাদরাসার (উর্দু, ফারসি ও বাংলা মাধ্যম) পাঠদান অনুসরণ করে। কিছু কিতাবে সম্ভাব্য ও আকাঙ্ক্ষামূলক অতীত لَعَلَّمَا كَتَبَ ও لَيْتَمَا كَتَبَ লেখা হয়। ধ্রুপদী আরবি ব্যাকরণ ক্রিয়াকে দুটি গারদান (মাযী ও মুযারে’), আমর, বাচ্য ও অবস্থা দিয়ে বর্ণনা করে, বাকি অর্থগুলোকে অব্যয়যুক্ত গঠন হিসেবে দেখে। অনুবাদগুলো সহায়ক, হুবহু সমার্থক নয়।')}</footer>`;}
+$('#main').innerHTML=secHero()+secBasics()+secSighah()+secMaster()+secPast()+secPresent()+secCommand()+secEmph()+secPassive()+secNouns()+secSaghir()+secAbwab()+secMazid()+secAqsam()+secBridge()+secGlossary()+secQuiz()+footer();
+$('#chapnav').innerHTML=CH.map((c,i)=>`<li><a href="#${c[0]}" data-ch="${c[0]}"><b>${i}</b>${L(c[1],c[2])}</a></li>`).join('');
+buildMap();
+
+/* ================= joining + stray Arabic ================= */
+const NONJ='اأإآدذرزوؤةءى';
+function lastBase(s){return s.replace(/[\u064B-\u065F\u0670\u200D]/g,'').slice(-1);}
+function joins(s){const c=lastBase(s);return c&&/[\u0621-\u064A]/.test(c)&&!NONJ.includes(c);}
+function fixJoins(root){root.querySelectorAll('.ar').forEach(el=>{if(!el.querySelector('span'))return;
+  const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);const ns=[];let n;while((n=w.nextNode()))if(n.nodeValue.length)ns.push(n);
+  for(let i=0;i<ns.length-1;i++){const a=ns[i],b=ns[i+1];if(a.parentNode===b.parentNode)continue;const av=a.nodeValue,bv=b.nodeValue;
+   if(/\s$/.test(av)||/^\s/.test(bv)||av.endsWith(ZWJ)||bv.startsWith(ZWJ))continue;if(!/^[\u0621-\u064A]/.test(bv)||!joins(av))continue;
+   a.nodeValue=av+ZWJ;b.nodeValue=ZWJ+bv;}});}
+function wrapArabic(root){const re=/[\u0600-\u06FF\u200D]+(?:[ \u060C\u2026←→]+[\u0600-\u06FF\u200D]+)*/g;
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest('.ar,svg,script,style,#tip')?NodeFilter.FILTER_REJECT:(/[\u0600-\u06FF]/.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT)});
+  const list=[];let n;while((n=w.nextNode()))list.push(n);
+  list.forEach(t=>{const fr=document.createDocumentFragment();let last=0;t.nodeValue.replace(re,(m,i)=>{if(i>last)fr.appendChild(document.createTextNode(t.nodeValue.slice(last,i)));
+   const sp=document.createElement('span');sp.className='ar inl';sp.textContent=m;fr.appendChild(sp);last=i+m.length;});
+   if(last<t.nodeValue.length)fr.appendChild(document.createTextNode(t.nodeValue.slice(last)));t.parentNode.replaceChild(fr,t);});}
+function afterRender(el){wrapArabic(el);fixJoins(el);if(typeof SEL!=='undefined')markSel(el);}
+
+/* ================= selection ================= */
+var SEL=1;
+function markSel(root){(root||document).querySelectorAll('[data-slot]').forEach(el=>{const on=+el.dataset.slot===SEL;if(el.classList.contains('chip'))el.setAttribute('aria-pressed',on);else el.classList.toggle('on',on);});}
+function go(id){const el=document.getElementById(id);if(el)el.scrollIntoView({block:'start'});}
+function select(n){SEL=n;markSel(document);const o=S[n-1],G=GRP[o.g];const lab=$('#selLabel');lab.textContent=o.pr;lab.style.setProperty('--c',G.c);lab.title=o.who;
+ const step=(en,bn,c,t,k)=>{const m=meaning(k,n);return `<div class="step" style="--c:${c};--t:${t}"><div class="lab">${L(en,bn)}</div>${render(k,n)}${L(m[0],m[1])}</div>`;};
+ let h=`<div class="step" style="--c:${G.c};--t:${G.t}"><div class="lab">${L('Pronoun','সর্বনাম')}</div><span class="ar">${o.pr}</span>${L(o.who,o.bnP)}</div>`;
+ h+='<span class="arrow">→</span>'+step('Past','মাযী','var(--past)','var(--past-t)','md');
+ h+='<span class="arrow">→</span>'+step('Present','মুযারে’','var(--pres)','var(--pres-t)','mu');
+ h+='<span class="arrow">→</span>'+step('Future','ভবিষ্যৎ','var(--fut)','var(--fut-t)','fu');
+ h+='<span class="arrow">→</span>'+step('Did not','নাবোধক অতীত','var(--nahy)','var(--nahy-t)','jazm');
+ if(is2(o)){h+='<span class="arrow">→</span>'+step('Command','আমর','var(--amr)','var(--amr-t)','amr');h+='<span class="arrow">→</span>'+step('Prohibition','নাহী','var(--nahy)','var(--nahy-t)','nahy');}
+ else h+='<span class="arrow">→</span>'+step('Let … write','… লিখুক','var(--amr)','var(--amr-t)','lamr');
+ $('#chain').innerHTML=h;afterRender($('#chain'));}
+document.addEventListener('click',e=>{
+ const tr=e.target.closest('.en,.bn');if(tr&&document.body.classList.contains('selftest')&&!e.target.closest('.top,#coach,.opts,#qnext')){tr.classList.toggle('show');return;}
+ const pk=e.target.closest('[data-pk]');if(pk){fillPast(pk.dataset.pk);return;}
+ const mz=e.target.closest('[data-mzp]');if(mz){fillMazid(+mz.dataset.mzp);return;}
+ const t=e.target.closest('[data-slot]');if(t&&!e.target.closest('.form'))select(+t.dataset.slot);});
+document.addEventListener('keydown',e=>{const t=e.target.closest&&e.target.closest('.pcell,tr[data-slot]');if(t&&(e.key==='Enter'||e.key===' ')){e.preventDefault();select(+t.dataset.slot);}});
+
+/* ================= tooltip ================= */
+const tip=$('#tip');
+function showTip(el){const k=el.dataset.k,s=+el.dataset.s;if(!k||!s||!KN[k])return;tip.innerHTML=describe(k,s);fixJoins(tip);
+ const r=el.getBoundingClientRect();tip.classList.add('v');const tw=tip.offsetWidth,th=tip.offsetHeight;
+ let x=Math.min(Math.max(8,r.left+r.width/2-tw/2),innerWidth-tw-8);let y=r.top-th-10;if(y<120)y=r.bottom+10;tip.style.left=x+'px';tip.style.top=y+'px';}
+function hideTip(){tip.classList.remove('v');}
+document.addEventListener('mouseover',e=>{const f=e.target.closest('.form');if(f)showTip(f);});
+document.addEventListener('mouseout',e=>{const f=e.target.closest('.form');if(f&&!f.contains(e.relatedTarget))hideTip();});
+document.addEventListener('focusin',e=>{const f=e.target.closest('.form');if(f)showTip(f);});
+document.addEventListener('focusout',e=>{if(e.target.closest('.form'))hideTip();});
+window.addEventListener('scroll',hideTip,{passive:true});
+
+/* ================= language + self-test ================= */
+function setLang(c){document.body.classList.remove('lang-en','lang-bn','lang-both','lang-ar');document.body.classList.add(c);
+ document.querySelectorAll('[data-lang]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.lang===c));
+ try{localStorage.setItem('sarf-lang',c);}catch(err){}}
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+try{const s=localStorage.getItem('sarf-lang');if(s&&['lang-en','lang-bn','lang-both','lang-ar'].includes(s))setLang(s);}catch(err){}
+$('#testBtn').addEventListener('click',()=>{const on=!document.body.classList.contains('selftest');document.body.classList.toggle('selftest',on);$('#testBtn').setAttribute('aria-pressed',on);document.querySelectorAll('.show').forEach(x=>x.classList.remove('show'));});
+
+/* ================= learn mode ================= */
+const STEPS=[
+ ['overview','The whole map','পুরো মানচিত্র','Everything grows from ك ت ب. Each branch answers one question: when, who, or what kind of word. Click a box to jump.','সবকিছু ك ت ب থেকে। প্রতিটি শাখা একটি প্রশ্নের উত্তর দেয়: কখন, কে, বা কোন ধরনের শব্দ। বক্সে ক্লিক করে সেখানে যান।'],
+ ['basics','Foundations','ভিত্তি','Root carries meaning, pattern carries shape, additions carry person and time. Pink = added, dark = root.','মূল অর্থ বহন করে, ওজন গঠন, আর যুক্ত অংশ পুরুষ ও কাল। গোলাপি = যুক্ত, গাঢ় = মূল।'],
+ ['sighah','Who is acting: 14 positions','কে করছে: ১৪ সীগাহ','Blue = third person, purple = second, green = first. Click a cell, then scroll: it lights up everywhere.','নীল = নাম পুরুষ, বেগুনি = মধ্যম, সবুজ = উত্তম। কোনো ঘরে ক্লিক করুন, সবখানে আলোকিত হবে।'],
+ ['master','One table, three times','এক ছক, তিন কাল','Read a row across: past, present, future. Learn the endings in the two sign boxes.','একটি সারি পাশাপাশি পড়ুন: মাযী, মুযারে’, ভবিষ্যৎ। চিহ্নের বক্স দুটি থেকে শেষাংশ মুখস্থ করুন।'],
+ ['past','Six kinds of past','মাযীর ছয় প্রকার','Tap each card: its construction appears in all 14 positions.','প্রতিটি কার্ডে চাপ দিন: সেই গঠন ১৪ সীগাহতে দেখাবে।'],
+ ['present','Present, future, negation','মুযারে’, ভবিষ্যৎ, নাবোধক','أَنَيْتُ gives the person; لَنْ and لَمْ change the ending.','أَنَيْتُ পুরুষ বলে দেয়; لَنْ ও لَمْ শেষাংশ বদলায়।'],
+ ['command','Command and prohibition','আমর ও নাহী','Drop تَ, add اُ or اِ, end in sukūn. Prohibition: لَا + majzūm.','تَ বাদ, اُ বা اِ যোগ, শেষে সাকিন। নাহী: لَا + মাজযূম।'],
+ ['emphasis','Emphasis','তাকীদ','لَ in front, نَّ at the end: “he will surely write”.','সামনে لَ, শেষে نَّ: “সে অবশ্যই লিখবে”।'],
+ ['passive','Passive','মাজহূল','Only the vowels change: كَتَبَ → كُتِبَ, يَكْتُبُ → يُكْتَبُ.','শুধু হরকত বদলায়: كَتَبَ → كُتِبَ, يَكْتُبُ → يُكْتَبُ।'],
+ ['nouns','Nouns from the root','মূল থেকে বিশেষ্য','Writer, written, place, tool, “better writer”: each has a fixed pattern.','লেখক, লিখিত, স্থান, যন্ত্র, “ভালো লেখক”: প্রতিটির নির্দিষ্ট ওজন।'],
+ ['saghir','Recite the family','পরিবার আবৃত্তি','The madrasa drill: say it aloud until it flows.','মাদরাসার গারদান: সাবলীল না হওয়া পর্যন্ত জোরে পড়ুন।'],
+ ['abwab','Six families','ছয় বাব','The middle vowel in past and present decides the bāb. كَتَبَ is Bāb Naṣara (a → u).','মাযী ও মুযারে’র মাঝের হরকত বাব নির্ধারণ করে। كَتَبَ বাবে নাসারা (a → u)।'],
+ ['mazid','Added-letter forms','মাযীদ ফীহ','Same endings, new stems, regular meanings. Try the ك ت ب picker.','একই শেষাংশ, নতুন মূলাংশ, নিয়মিত অর্থ। ك ت ب বাছাই করে দেখুন।'],
+ ['aqsam','Seven root types','হাফত আকসাম','Weak letters bend the forms. Compare كَتَبَ with قَالَ, دَعَا, مَدَّ.','দুর্বল অক্ষর রূপ বদলায়। كَتَبَ-কে قَالَ, دَعَا, مَدَّ-এর সাথে তুলনা করুন।'],
+ ['bridge','Map it to what you know','জানা ভাষার সাথে মিলান','English and Bangla ideas, and where Arabic differs.','ইংরেজি ও বাংলার ধারণা, এবং আরবি কোথায় আলাদা।'],
+ ['quiz','Test yourself','নিজেকে যাচাই করুন','Ten questions. Turn on Self-test to hide translations while you review.','দশটি প্রশ্ন। পুনরাবৃত্তির সময় অনুবাদ লুকাতে Self-test চালু করুন।']];
+let cur=0;
+function showStep(i){cur=Math.max(0,Math.min(STEPS.length-1,i));const[id,te,tb,xe,xb]=STEPS[cur];
+ document.querySelectorAll('.focus').forEach(e=>e.classList.remove('focus'));const el=document.getElementById(id);el.classList.add('focus');
+ $('#cStep').innerHTML=L(`Step ${cur+1} of ${STEPS.length}`,`ধাপ ${cur+1} / ${STEPS.length}`);$('#cTitle').innerHTML=L(te,tb);$('#cText').innerHTML=LB(xe,xb);
+ afterRender($('#coach'));$('#cPrev').disabled=cur===0;$('#cNext').textContent=cur===STEPS.length-1?'Finish':'Next';el.scrollIntoView({block:'start'});}
+function exitLearn(){document.body.classList.remove('learning');document.querySelectorAll('.focus').forEach(e=>e.classList.remove('focus'));}
+$('#learnBtn').addEventListener('click',()=>{document.body.classList.add('learning');showStep(0);});
+$('#cNext').addEventListener('click',()=>{if(cur===STEPS.length-1)exitLearn();else showStep(cur+1);});
+$('#cPrev').addEventListener('click',()=>showStep(cur-1));
+$('#cExit').addEventListener('click',exitLearn);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){exitLearn();hideTip();}});
+
+/* ================= print ================= */
+let wasOpen=[],prevLang=null;
+function prepPrint(){exitLearn();wasOpen=[...document.querySelectorAll('details')].map(d=>d.open);document.querySelectorAll('details').forEach(d=>d.open=true);
+ if(document.body.classList.contains('lang-ar')){prevLang='lang-ar';setLang('lang-both');}}
+function undoPrint(){document.querySelectorAll('details').forEach((d,i)=>d.open=wasOpen[i]||false);if(prevLang){setLang(prevLang);prevLang=null;}}
+window.addEventListener('beforeprint',()=>{if(!document.body.classList.contains('pp'))prepPrint();});
+window.addEventListener('afterprint',()=>{if(!document.body.classList.contains('pp'))undoPrint();});
+$('#printBtn').addEventListener('click',()=>{document.body.classList.add('pp');prepPrint();scrollTo(0,0);try{window.print();}catch(err){}});
+$('#ppExit').addEventListener('click',()=>{document.body.classList.remove('pp');undoPrint();});
+
+/* ================= chapter nav highlight ================= */
+const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){const id=en.target.id;document.querySelectorAll('.chapnav a').forEach(a=>a.classList.toggle('cur',a.dataset.ch===id));
+  const a=document.querySelector(`.chapnav a[data-ch="${id}"]`);if(a&&a.scrollIntoView&&!document.body.classList.contains('learning')){const p=a.parentElement.parentElement.parentElement;p.scrollLeft=a.offsetLeft-40;}}});},{rootMargin:'-140px 0px -65% 0px'});
+CH.forEach(c=>{const el=document.getElementById(c[0]);if(el)io.observe(el);});
+
+/* ================= start ================= */
+fillPast('md');fillMazid(2);
+afterRender(document.getElementById('main'));
+select(1);nextQ();
+$('#qnext').addEventListener('click',()=>{if(!answered&&qi>=0&&$('#opts').children.length)qi++;nextQ();});
+$('#glq').addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();document.querySelectorAll('#glt tbody tr').forEach(tr=>{tr.style.display=!q||tr.textContent.toLowerCase().includes(q)?'':'none';});});
+})();
+</script>
+</body>
+</html>
